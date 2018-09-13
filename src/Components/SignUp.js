@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import {
+    Link,
+    withRouter
+} from 'react-router-dom';
+import { auth } from '../firebase';
 import * as routes from '../Constants/Routes';
 import {
     Button,
@@ -9,17 +13,16 @@ import {
     FormGroup,
     Label,
     Input,
-    FormText,
     Row
 } from 'reactstrap';
 
-const SignUpPage = () =>
+const SignUpPage = ({ history }) =>
     <div>
         <Container>
             <Row>
                 <Col xs="3" />
                 <Col xs="auto">
-                    <SignUpForm />
+                    <SignUpForm history={history} />
                 </Col>
                 <Col sm="3" />
             </Row>
@@ -37,40 +40,44 @@ const INITIAL_STATE = {
     errors: null
 };
 
-const byPropKey = (property, value) => () => ({
-    [property]: value
-});
+const byPropKey = function(property, value) {
+    switch (property) {
+        case 'email':
 
-const checkName = (property, value) => () => ({
-    [property]: value
-}, console.log(validateName(value)));
+            // Make sure that email is valid.
+            const valid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+            let cleanedEmail = value.trim();
 
-// const outputName = fullName => {
-//      if (validateName(fullName)) {
-//           return validateName(fullName);
-//      } else {
-//          return new Error('That name is invalid. Please check to make sure name is composed of a first and last name. A name can only contain alphanumeric characters.');
-//      }
-// };
-//
-// const validateName = fullName => {
-//     if (fullName && fullName.length !== 0) {
-//         const ex = /^[a-z _]+$/i;
-//         let cleanedName = fullName.split(' ');
-//
-//         fullName.trim();
-//
-//         // Make sure that the trimmed name contains two parts when split.
-//         // Make sure that input is alphanumeric.
-//         if (cleanedName.length === 2 && ex.test(fullName)) {
-//             return {
-//                 first: cleanedName[0],
-//                 last: cleanedName[1]
-//             };
-//         }
-//     }
-//     return false;
-// };
+            return function () {
+                return valid ? {[property]: cleanedEmail} : null;
+            };
+        case 'name':
+            let nameObj = {
+                first: '',
+                last: ''
+            };
+
+            if (value && value.length !== 0) {
+                const ex = /^[a-z _]+$/i;
+                let cleanedName = value.trim().split(' ');
+
+                // Make sure that the trimmed name contains two parts when split.
+                // Make sure that input is alphanumeric.
+                if (cleanedName.length === 2 && ex.test(value)) {
+                    nameObj.first = cleanedName[0];
+                    nameObj.last = cleanedName[1];
+                    console.log(nameObj);
+                }
+            }
+            return function () {
+                return {[property]: nameObj};
+            };
+        default:
+            return function () {
+                return {[property]: value};
+            };
+    }
+};
 
 class SignUpForm extends Component {
     constructor(props) {
@@ -79,7 +86,24 @@ class SignUpForm extends Component {
     }
 
     onSubmit = (event)  => {
+         const {
+             email,
+             passwordOne
+         } = this.state;
 
+         const {
+             history
+         } = this.props;
+
+         auth.doCreateUserWithEmailAndPassword(email, passwordOne)
+             .then(authUser => {
+                 this.setState({ ...INITIAL_STATE });
+                 history.push(routes.DASHBOARD);
+             })
+             .catch(error => {
+                 this.setState(byPropKey('error', error));
+             });
+         event.preventDefault();
     };
 
     render() {
@@ -94,8 +118,10 @@ class SignUpForm extends Component {
         const isInvalid =
             passwordOne !== passwordTwo ||
             passwordOne === '' ||
-            email === '' ||
-            (name === ''  && !validateName(this.state.name));
+            !email ||
+            !name ||
+            name.first === '' ||
+            name.last === '';
 
         return(
             <Form onSubmit={this.onSubmit}>
@@ -155,7 +181,9 @@ class SignUpForm extends Component {
                 </FormGroup>
                 <Button
                     type="submit"
-                    disabled={isInvalid}>
+                    disabled={isInvalid}
+                    color="success"
+                    block>
                     Submit
                 </Button>
             </Form>
@@ -170,7 +198,7 @@ const SignUpLink = () =>
         <Link to={routes.SIGN_UP}>Sign Up </Link>
     </p>;
 
-export default SignUpPage;
+export default withRouter(SignUpPage);
 export {
     SignUpForm,
     SignUpLink

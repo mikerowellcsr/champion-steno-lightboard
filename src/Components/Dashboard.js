@@ -16,7 +16,6 @@ import {
 import SlidingPane from 'react-sliding-pane';
 import DocumentTitle from 'react-document-title';
 import ConfigSpeakerDeck from './Config/SpeakerDeck';
-import './App.css';
 
 class Dashboard extends Component {
     constructor(props) {
