@@ -3,8 +3,8 @@ import {
     Link,
     withRouter
 } from 'react-router-dom';
-import { auth } from '../firebase';
-import * as routes from '../Constants/Routes';
+import { auth, db } from '../firebase';
+import * as routes from '../constants/Routes';
 import {
     Button,
     Col,
@@ -97,11 +97,17 @@ class SignUpForm extends Component {
 
          auth.doCreateUserWithEmailAndPassword(email, passwordOne)
              .then(authUser => {
-                 this.setState({ ...INITIAL_STATE });
-                 history.push(routes.DASHBOARD);
+                 db.doCreateUser(authUser.user.uid, email)
+                     .then(() => {
+                         this.setState({ ...INITIAL_STATE });
+                         history.push(routes.DASHBOARD);
+                     })
+                     .catch(error => {
+                         this.setState(byPropKey('errors', error));
+                     })
              })
              .catch(error => {
-                 this.setState(byPropKey('error', error));
+                 this.setState(byPropKey('errors', error));
              });
          event.preventDefault();
     };

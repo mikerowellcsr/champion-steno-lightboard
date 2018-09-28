@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import SignUpLink, {SignUpForm} from './SignUp';
 import { auth } from '../firebase';
-import * as routes from '../Constants/Routes';
+import * as routes from '../constants/Routes';
 import {
     Button,
     Col,
@@ -13,19 +11,23 @@ import {
     Input,
     Row
 } from 'reactstrap';
+import Logo from '../assets/img/champion-steno-logo-300x206.png';
 
 const SignInPage = ({ history }) =>
-    <div>
+    <div className="sign-in-box">
         <Container>
             <Row>
-                <Col xs="3" />
-                <Col xs="auto">
+                <Col xs="6" sm="4" />
+                <Col xs="6" sm="4">
+                    <img src={Logo} className='sign-in__logo' alt="Champion Steno Logo" />
+                    <h3>
+                        Lightbox Admin Sign-In
+                    </h3>
                     <SignInForm history={history} />
                 </Col>
-                <Col sm="3" />
+                <Col xs="6" sm="4" />
             </Row>
         </Container>
-        <h1>Sign In Page</h1>
     </div>;
 
 const byPropKey = (propertyName, value)  => () => ({
@@ -69,7 +71,8 @@ class SignInForm extends Component {
     render() {
         const {
             email,
-            password
+            password,
+            errors
         } = this.state;
 
         const isInvalid =
@@ -77,41 +80,57 @@ class SignInForm extends Component {
             password === '';
 
         return(
-            <Form onSubmit={this.onSubmit}>
-                <FormGroup row>
-                    <Label for="email" sm={4}>Email</Label>
-                    <Col sm={8}>
-                        <Input
-                            type="text"
-                            name="email"
-                            id="email"
-                            value={this.email}
-                            onChange={e => this.setState(byPropKey('email', e.target.value))}
-                            required
-                        />
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Label for="password" sm={4}>Password</Label>
-                    <Col sm={8}>
-                        <Input
-                            type="password"
-                            name="password"
-                            id="password"
-                            value={this.password}
-                            onChange={e => this.setState(byPropKey('password', e.target.value))}
-                            required
-                        />
-                    </Col>
-                </FormGroup>
-                <Button
-                    type="submit"
-                    disabled={isInvalid}
-                    color="success"
-                    block>
-                    Log in
-                </Button>
-            </Form>
+            <div>
+                <Form onSubmit={this.onSubmit}>
+                    <FormGroup row>
+                        <Label
+                            size="lg"
+                            for="email"
+                            sm={4}>
+                                Email
+                        </Label>
+                        <Col sm={8}>
+                            <Input
+                                bsSize="lg"
+                                type="text"
+                                name="email"
+                                id="email"
+                                value={this.email}
+                                onChange={e => this.setState(byPropKey('email', e.target.value))}
+                                required
+                            />
+                        </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                        <Label
+                            size="lg"
+                            for="password"
+                            sm={4}>
+                                Password
+                        </Label>
+                        <Col sm={8}>
+                            <Input
+                                bsSize="lg"
+                                type="password"
+                                name="password"
+                                id="password"
+                                value={this.password}
+                                onChange={e => this.setState(byPropKey('password', e.target.value))}
+                                required
+                            />
+                        </Col>
+                    </FormGroup>
+                    <Button
+                        size="lg"
+                        type="submit"
+                        disabled={isInvalid}
+                        color="info"
+                        block>
+                        Log in
+                    </Button>
+                </Form>
+                <p className="sign-in__errors">{ errors && <p>{errors.message}</p> }</p>
+            </div>
         )
     }
 }

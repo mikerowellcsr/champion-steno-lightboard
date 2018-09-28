@@ -1,7 +1,28 @@
-@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css?family=Rubik');
 
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Muli', sans-serif !important;
+    font-family: 'Rubik', sans-serif !important;
+}
+
+.sign-in-box {
+    margin: 2em 0 0 0;
+ }
+
+.sign-in-box .btn-info {
+    background-color: #00B9FF !important;
+}
+
+.sign-in-box h3 {
+    margin: 1em 0 1em 0;
+    text-align: center;
+}
+
+.sign-in__errors {
+    margin: 1em 0 1em 0;
+}
+
+.sign-in__logo {
+    margin: 4em 2em 2em 2em;
 }

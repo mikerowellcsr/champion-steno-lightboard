@@ -18,30 +18,21 @@ import {
     NavItem,
     NavLink
 } from 'reactstrap';
+import { auth } from '../firebase';
 import SlidingPane from 'react-sliding-pane';
 import DocumentTitle from 'react-document-title';
-import ConfigSpeakerDeck from './Config/SpeakerDeck';
-import { auth } from '../firebase';
+import ConfigSpeakerDeck from './elements/SpeakerDeck';
+import AuthUserContext from './AuthUserContext';
 
-import * as routes from '../Constants/Routes';
+import * as routes from '../constants/Routes';
 
-class Navigation extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return(
-            <div>
-                {
-                    this.props.authUser
-                    ? <NavigationAuth />
-                    : <NavigationNonAuth />
-                }
-            </div>
-        );
-    }
-}
+const Navigation = () =>
+    <AuthUserContext.Consumer>
+        {authUser => authUser
+            ? <NavigationAuth/>
+            : <NavigationNonAuth/>
+        }
+    </AuthUserContext.Consumer>;
 
 class NavigationAuth extends Component {
     constructor() {
@@ -52,6 +43,7 @@ class NavigationAuth extends Component {
             isPaneOpenLeft: false,
             isOpen: false
         };
+
         this.toggle = this.toggle.bind(this);
         this.toggleLeftPane = this.toggleLeftPane.bind(this);
     }
@@ -121,10 +113,11 @@ class NavigationAuth extends Component {
         </div>;
     }
 }
+
 const NavigationNonAuth = () =>
     <ul>
         <li><Link to={routes.LANDING}>Landing</Link></li>
         <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
-    </ul>
+    </ul>;
 
 export default Navigation;
