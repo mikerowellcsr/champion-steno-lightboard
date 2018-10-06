@@ -18,14 +18,15 @@ wss.on('connection', ws => {
 
     ws.on('message', message => {
         const data = JSON.parse(message);
-
+        console.log(data);
         switch (data.type) {
             case 'USER_LOGGED_ON':
                 index = users.length;
 
                 users.push({
                     username: data.username,
-                    socketId: '000'
+                    id: data.id,
+                    logOnTime: data.logOnTime
                 });
 
                 ws.send(JSON.stringify({
@@ -37,15 +38,23 @@ wss.on('connection', ws => {
                     type: 'LIST_USERS',
                     users
                 }, ws);
+                break;
+            case 'SEND_KEY_PRESS':
+                broadcast({
+                    type: 'SEND_KEY_PRESS',
+                    key: message.key
+                }, ws);
 
+                console.log('received: ' + message);
                 break;
             default:
                 break;
         }
     });
+
     ws.on('close', () => {
         users.splice(index, 1);
-
+        console.log('user left.');
         broadcast({
             type: 'LIST_USERS',
             users

@@ -7,6 +7,11 @@ const users = (state = [], action) => {
                 username: action.username,
                 socketId: action.socketId
             }]);
+        case types.REGISTER_NEW_USER:
+            return {
+                ...state,
+                contents
+            };
         case types.LIST_USERS:
             return action.users;
         default:

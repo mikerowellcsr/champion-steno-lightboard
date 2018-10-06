@@ -5,22 +5,21 @@ import {
 } from 'react-router-dom';
 import * as routes from './constants/Routes';
 import AccountPage from './components/Account';
-import Dashboard from './components/Dashboard';
 import HomePage from './components/Home';
-import Navigation from './components/Navigation';
-import LandingPage from './components/Landing';
+import LightboxPage from './containers/Lightbox';
 import PasswordForgetPage from './components/PasswordForget';
 import SignUpPage from './components/SignUp';
 import SignInPage from './components/SignIn'
 import withAuthentication from './components/withAuthentication';
 import './App.css';
+import DashboardComponent from './containers/Dashboard';
 
 const App = () =>
     <Router>
         <div>
             <Route
-                exact path={routes.LANDING}
-                component={LandingPage}
+                exact path={routes.LIGHTBOX}
+                component={LightboxPage}
             />
             <Route
                 exact path={routes.SIGN_UP}
@@ -32,7 +31,7 @@ const App = () =>
             />
             <Route
                 exact path={routes.SIGN_OUT}
-                component={LandingPage}
+                component={SignInPage}
             />
             <Route
                 exact path={routes.PASSWORD_FORGET}
@@ -48,7 +47,7 @@ const App = () =>
             />
             <Route
                 exact path={routes.DASHBOARD}
-                component={Dashboard}
+                component={DashboardComponent}
             />
         </div>
     </Router>;

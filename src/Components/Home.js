@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import withAuthorization from './withAuthorization';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 import { db } from '../firebase';
 
 class HomePage extends Component {
@@ -12,16 +14,16 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
+        const { onSetUsers } = this.props;
+
         db.onceGetUsers().then(snapshot =>
-            this.setState({
-                users: snapshot.val()
-            })
+            onSetUsers(snapshot.val())
         );
     }
 
 
     render() {
-        const { users } = this.state;
+        const { users } = this.props;
 
         return (
             <div>
@@ -41,10 +43,21 @@ const UserList = ({ users }) =>
         <p>(Saved on sign-up in Firebase.)</p>
         {
             Object.keys(users).map(key =>
-                <div key={key}>{users[key].email}</div>
+                <div key={key}>{users[key]}</div>
             )
         }
     </div>;
 
+const mapStateToProps = (state) => ({
+    users: state.userState.users,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    onSetUsers: (users) => dispatch({ type: 'USERS_SET', users }),
+});
+
 const authCondition = (authUser) => !!authUser;
-export default withAuthorization(authCondition)(HomePage);
+export default compose(
+    withAuthorization(authCondition),
+    connect(mapStateToProps, mapDispatchToProps)
+)(HomePage);

@@ -22,17 +22,18 @@ import { auth } from '../firebase';
 import SlidingPane from 'react-sliding-pane';
 import DocumentTitle from 'react-document-title';
 import ConfigSpeakerDeck from './elements/SpeakerDeck';
-import AuthUserContext from './AuthUserContext';
+import { connect } from 'react-redux';
 
 import * as routes from '../constants/Routes';
 
-const Navigation = () =>
-    <AuthUserContext.Consumer>
-        {authUser => authUser
-            ? <NavigationAuth/>
+const Navigation = ({ authUser }) =>
+    <div>
+        {
+            authUser
+            ? <NavigationAuth user={authUser.email}/>
             : <NavigationNonAuth/>
         }
-    </AuthUserContext.Consumer>;
+    </div>;
 
 class NavigationAuth extends Component {
     constructor() {
@@ -70,7 +71,7 @@ class NavigationAuth extends Component {
         library.add(faSignOutAlt);
 
         return <div>
-            <Navbar color="dark" dark expand="md">
+            <Navbar light expand="md">
                 <NavbarBrand href="/">Champion Steno Lightboard</NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
@@ -78,7 +79,7 @@ class NavigationAuth extends Component {
                         <NavItem>
                             <NavLink href="/account">
                                 <FontAwesomeIcon icon="user" />
-                                &nbsp;&nbsp;Account
+                                &nbsp;&nbsp;{this.props.user}
                             </NavLink>
                         </NavItem>
                         <NavItem>
@@ -88,7 +89,9 @@ class NavigationAuth extends Component {
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink onClick={auth.doSignOut}>
+                            <NavLink
+                                href="#"
+                                onClick={auth.doSignOut}>
                                 <FontAwesomeIcon icon="sign-out-alt" />
                                 &nbsp;&nbsp;Sign Out
                             </NavLink>
@@ -116,8 +119,12 @@ class NavigationAuth extends Component {
 
 const NavigationNonAuth = () =>
     <ul>
-        <li><Link to={routes.LANDING}>Landing</Link></li>
+        <li><Link to={routes.LIGHTBOX}>Lightbox</Link></li>
         <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
     </ul>;
 
-export default Navigation;
+const mapStateToProps = (state) => ({
+    authUser: state.sessionState.authUser,
+});
+
+export default connect(mapStateToProps)(Navigation);

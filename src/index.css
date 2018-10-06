@@ -6,6 +6,34 @@ body, html {
     font-family: 'Rubik', sans-serif !important;
 }
 
+.inverse {
+    color: #fff;
+}
+
+.listgroup-users {
+    margin: 1em 0 1em 0;
+}
+
+.main-container {
+    padding: 3em 0 3em 0;
+}
+
+.main-container h1 {
+    margin: 0 0 2em 0;
+}
+
+.margin-bottom {
+    margin: 0 0 2em 0;
+}
+
+.margin-top {
+    margin: 2em 0 0 0;
+}
+
+.navbar-light .navbar-brand {
+    color: rgba(0,0,0,.5) !important;
+}
+
 .sign-in-box {
     margin: 2em 0 0 0;
  }
