@@ -118,7 +118,6 @@ class SignUpForm extends Component {
             name,
             passwordOne,
             passwordTwo,
-            errors
         } = this.state;
 
         const isInvalid =

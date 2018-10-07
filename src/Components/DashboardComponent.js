@@ -12,8 +12,6 @@ import { UserList } from '../containers/UserList';
 import setupSocket from '../sockets';
 import PropTypes from 'prop-types';
 import SpeakerDeck from './elements/SpeakerDeck';
-import firebase from 'firebase';
-import FileUploader from 'react-firebase-file-uploader';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -43,7 +41,7 @@ class Dashboard extends React.Component {
 
     componentDidMount() {
         const { store } = this.context;
-        const socket = setupSocket(store.dispatch, 'Me');
+        setupSocket(store.dispatch, 'Me');
     }
 
     render() {
@@ -91,7 +89,7 @@ class Dashboard extends React.Component {
                             <Input
                                 type="text"
                                 name="control"
-                                size="lg"
+                                bssize="lg"
                                 ref="control"
                                 autoFocus
                                 onChange={handleKeyPress}

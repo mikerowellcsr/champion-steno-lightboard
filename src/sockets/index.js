@@ -1,5 +1,5 @@
 import * as types from '../constants/ActionTypes';
-import {userLoggedOn, populateUserList, keyPressReceived, sendKeyPress} from '../actions';
+import {userLoggedOn, populateUserList, keyPressReceived } from '../actions';
 
 const setupSocket = (dispatch, id) => {
     const socket = new WebSocket('ws://localhost:8989');

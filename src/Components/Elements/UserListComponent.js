@@ -5,7 +5,6 @@ import {
     Button,
     Card,
     CardBody,
-    CardText,
     UncontrolledCollapse
 } from 'reactstrap';
 
@@ -20,11 +19,11 @@ const UserListComponent =({ users }) => (
         <UncontrolledCollapse toggler="#userList">
             <Card className="listgroup-users">
                 <CardBody>
-                    <CardText>
-                        {users.map(user => (
-                            <div key={user.id}>{user.id}</div>
-                        ))}
-                    </CardText>
+                        <ul>
+                            {users.map(user => (
+                                <li key={user.id}>{user.id}</li>
+                            ))}
+                        </ul>
                 </CardBody>
             </Card>
         </UncontrolledCollapse>
