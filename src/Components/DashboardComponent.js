@@ -12,7 +12,8 @@ import { UserList } from '../containers/UserList';
 import setupSocket from '../sockets';
 import PropTypes from 'prop-types';
 import SpeakerDeck from './elements/SpeakerDeck';
-import keyPress from '../sagas';
+import firebase from 'firebase';
+import FileUploader from 'react-firebase-file-uploader';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -34,7 +35,7 @@ class Dashboard extends React.Component {
 
     // Dispatch the action to Redux.
     sendKeyPress(key) {
-         this.props.keyPress({
+         this.props.dispatch({
              type: 'SEND_KEY_PRESS',
              key
          });
@@ -117,9 +118,8 @@ Dashboard.contextTypes = {
     store: PropTypes.object
 };
 
-keyPress.propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    keyPress: PropTypes.func.isRequired
+Dashboard.propTypes = {
+    dispatch: PropTypes.func.isRequired
 };
 
 export default withAuthorization(authCondition)(Dashboard);

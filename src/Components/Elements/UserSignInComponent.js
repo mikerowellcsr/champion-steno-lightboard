@@ -34,7 +34,6 @@ class UserSignIn extends React.Component {
     handleSubmit(event) {
         const { store } = this.context;
         const socket = setupSocket(store.dispatch, this.state.username);
-        // sagaMiddleware.run(registerNewUser, { socket, clientId });
         event.preventDefault();
     }
 

@@ -1,5 +1,5 @@
 import * as types from '../constants/ActionTypes';
-import { userLoggedOn, populateUserList, keyPressReceived } from '../actions';
+import {userLoggedOn, populateUserList, keyPressReceived, sendKeyPress} from '../actions';
 
 const setupSocket = (dispatch, id) => {
     const socket = new WebSocket('ws://localhost:8989');
@@ -23,7 +23,7 @@ const setupSocket = (dispatch, id) => {
                 dispatch(populateUserList(data.users));
                 break;
             case types.SEND_KEY_PRESS:
-                dispatch(keyPressReceived(data));
+                dispatch(keyPressReceived(data.key));
                 console.log(data);
                 break;
             default:

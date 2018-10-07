@@ -16,3 +16,8 @@ export const keyPressReceived = key => ({
     type: types.KEYPRESS_RECEIVED,
     key
 });
+
+export const sendKeyPress = key => ({
+    type: types.SEND_KEY_PRESS,
+    key
+});

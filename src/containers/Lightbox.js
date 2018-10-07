@@ -3,7 +3,7 @@ import LightboxComponent from '../components/elements/LightboxComponent';
 
 const Lightbox = connect(state => ({
     users: state.users,
-    key: state.key
+    keyPress: state.keyPress.key
 }), {})(LightboxComponent);
 
 export default Lightbox;

@@ -5,10 +5,6 @@ import { userLoggedOn, keyPressReceived } from "../actions";
 const mapDispatchToProps = dispatch => ({
     dispatch: (username, socketId) => {
         dispatch(userLoggedOn(username, socketId));
-    },
-
-    keyPress: (key) => {
-        dispatch(keyPressReceived(key));
     }
 });
 

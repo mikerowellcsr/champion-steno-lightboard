@@ -42,10 +42,10 @@ wss.on('connection', ws => {
             case 'SEND_KEY_PRESS':
                 broadcast({
                     type: 'SEND_KEY_PRESS',
-                    key: message.key
+                    key: data.key
                 }, ws);
 
-                console.log('received: ' + message);
+                console.log('received: ' +  data.key);
                 break;
             default:
                 break;
