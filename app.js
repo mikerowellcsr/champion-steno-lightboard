@@ -6,6 +6,7 @@ const path = require('path');
 const WebSocket = require('ws');
 
 const app = express();
+let port = process.env.PORT || 8000;
 
 app.use(fileUpload());
 app.use(cors());
@@ -117,8 +118,8 @@ wss.on('connection', ws => {
     });
 });
 
-app.listen(8000, () => {
-    console.log('Running on 8000');
+app.listen(port, () => {
+    console.log(`Running on ${port}!`);
 });
 
 module.exports = app;
