@@ -2,14 +2,21 @@ const cors = require('cors');
 const cowsay = require('cowsay');
 const express = require('express');
 const fileUpload = require('express-fileupload');
+const http = require('http');
 const path = require('path');
-const WebSocket = require('ws');
+const WebSocket = require('ws').Server;
 
 const app = express();
-let port = process.env.PORT || 8000;
+const httpServer = http.createServer(app);
+let PORT = process.env.PORT || 8000;
 
 app.use(fileUpload());
 app.use(cors());
+
+// Create new WebSockets connection.
+const wss = new WebSocket({
+    'server': httpServer
+});
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -54,10 +61,9 @@ app.post('/upload', cors(corsOptions), function(req, res) {
     });
 });
 
-const wss = new WebSocket.Server({
-    port: 8989
-});
-
+// const wss = new WebSocket.Server({
+//     port: 8989
+// });
 
 const users = [];
 
@@ -118,8 +124,6 @@ wss.on('connection', ws => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`Running on ${port}!`);
-});
+httpServer.listen(PORT,() => console.log(`Listening on ${PORT}!`));
 
 module.exports = app;
