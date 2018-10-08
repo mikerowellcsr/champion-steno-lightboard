@@ -1,7 +1,7 @@
 const WebSocket = require('ws');
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 const fileUpload = require('express-fileupload');
 
 const app = express();
@@ -9,10 +9,21 @@ const app = express();
 app.use(fileUpload());
 app.use(cors());
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 const corsOptions = {
     origin: 'http://localhost:3000',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
+
+app.get('/check', (req, res) => {
+    res.send('Up and running!');
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 
 app.post('/upload', cors(corsOptions), function(req, res) {
     if (!req.files) {
@@ -98,7 +109,7 @@ wss.on('connection', ws => {
 });
 
 app.listen(8000, () => {
-    console.log('8000');
+    console.log('Running on 8000');
 });
 
 module.exports = app;
