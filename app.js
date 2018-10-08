@@ -1,8 +1,9 @@
-const WebSocket = require('ws');
-const express = require('express');
 const cors = require('cors');
-const path = require('path');
+const cowsay = require('cowsay');
+const express = require('express');
 const fileUpload = require('express-fileupload');
+const path = require('path');
+const WebSocket = require('ws');
 
 const app = express();
 
@@ -17,8 +18,14 @@ const corsOptions = {
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
-app.get('/check', (req, res) => {
-    res.send('Up and running!');
+// Serve our base route that returns a Hello World cow
+app.get('/api/cow/', cors(), async (req, res, next) => {
+    try {
+        const moo = cowsay.say({ text: 'Hello World!' });
+        res.json({ moo })
+    } catch (err) {
+        next(err)
+    }
 });
 
 // The "catchall" handler: for any request that doesn't
