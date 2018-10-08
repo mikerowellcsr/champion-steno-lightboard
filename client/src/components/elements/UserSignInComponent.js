@@ -53,6 +53,7 @@ class UserSignIn extends React.Component {
                                     <Label for="name" size="lg" sm={2}>Name</Label>
                                     <Col sm={10}>
                                         <Input
+                                            autoFocus
                                             bsSize="lg"
                                             type="name"
                                             name="name"
