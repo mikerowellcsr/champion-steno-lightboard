@@ -31,7 +31,7 @@ app.get('/api/cow/', cors(), async (req, res, next) => {
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build/index.html'));
+    res.sendFile(path.join(__dirname, '/client/build/index.html'));
 });
 
 app.post('/upload', cors(corsOptions), function(req, res) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { UserSignIn } from '../../containers/UserSignIn';
 import PropTypes from 'prop-types';
-import SpeakerDeck from './SpeakerDeck';
+import SpeakerDeckNoAuth from './SpeakerDeckNoAuth';
 import {
     Container,
     Row
@@ -18,7 +18,7 @@ const LightboxComponent = ({ users, keyPress }) => {
                             Speaker Deck
                         </h1>
                     </Row>
-                    <SpeakerDeck activeSpeaker={keyPress} />
+                    <SpeakerDeckNoAuth activeSpeaker={keyPress} />
                 </Container>}
         </div>
     );
