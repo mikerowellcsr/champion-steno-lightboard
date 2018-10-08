@@ -1,8 +1,9 @@
 import * as types from '../constants/ActionTypes';
 import {userLoggedOn, populateUserList, keyPressReceived } from '../actions';
+const HOST = window.location.origin.replace(/^http/, 'ws');
 
 const setupSocket = (dispatch, id) => {
-    const socket = new WebSocket('ws://localhost:8989');
+    const socket = new WebSocket(HOST);
 
     socket.onopen = () => {
         socket.send(JSON.stringify({
