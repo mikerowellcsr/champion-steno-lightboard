@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
 import { Provider } from 'react-redux';
 import reducers from './reducers';
@@ -28,5 +27,3 @@ ReactDOM.render(
         <App />
     </Provider>, document.getElementById('root')
 );
-
-registerServiceWorker();
