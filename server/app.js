@@ -10,7 +10,7 @@ app.use(fileUpload());
 app.use(cors());
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build/index.html')));
+app.use(express.static(path.join(__dirname, '/client/build')));
 
 const corsOptions = {
     origin: 'http://localhost:3000',
