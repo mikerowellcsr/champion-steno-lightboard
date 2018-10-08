@@ -1,6 +1,38 @@
 {
+  "name": "champion-steno-lightboard",
+  "version": "0.1.0",
+  "engines": {
+    "node": "10.x"
+  },
   "proxy": "http://localhost:8000",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.4",
+    "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@fortawesome/react-fontawesome": "^0.1.3",
+    "bootstrap": "^4.1.3",
+    "filepond-plugin-file-metadata": "^1.0.2",
+    "filepond-plugin-file-rename": "^1.1.0",
+    "filepond-plugin-file-validate-type": "^1.1.0",
+    "firebase": "^5.4.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.0",
+    "react-document-title": "^2.0.3",
+    "react-dom": "^16.5.0",
+    "react-filepond": "^4.0.0",
+    "react-modal": "^3.5.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5",
+    "react-sliding-pane": "^2.0.2",
+    "reactstrap": "^6.4.0",
+    "recompose": "^0.30.0",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0",
+    "ws": "^6.0.0"
+  },
   "scripts": {
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
