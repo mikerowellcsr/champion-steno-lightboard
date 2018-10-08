@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    BrowserRouter as Router,
+    Switch,
     Route
 } from 'react-router-dom';
 import * as routes from './constants/Routes';
@@ -15,7 +15,7 @@ import './App.css';
 import DashboardComponent from './containers/Dashboard';
 
 const App = () =>
-    <Router>
+    <Switch>
         <div>
             <Route
                 exact path={routes.LIGHTBOX}
@@ -50,6 +50,6 @@ const App = () =>
                 component={DashboardComponent}
             />
         </div>
-    </Router>;
+    </Switch>;
 
 export default withAuthentication(App);
