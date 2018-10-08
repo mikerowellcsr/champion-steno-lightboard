@@ -2,7 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c741d92d-091a-4022-8f15-0028336f08da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Account.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/DashboardComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Elements/LightboxComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Elements/SpeakerDeck.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Elements/SpeakerDeckNoAuth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Elements/UserListComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Elements/UserSignInComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/FormErrors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Landing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Navigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PasswordChange.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PasswordForget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SignIn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SignOut.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SignUp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/withAuthentication.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/withAuthorization.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constants/ActionTypes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constants/Routes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/champion-steno-logo-300x206.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/champion-steno-logo-500x244.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/champion-steno-logo-700x481.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/champion-steno-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Lightbox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/UserList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/UserSignIn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase/db.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase/firebase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/keypress.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/session.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sagas/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sockets/index.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,13 +96,13 @@
         <counts>
           <entry key="css" value="698" />
           <entry key="js" value="41182" />
-          <entry key="json" value="33" />
+          <entry key="json" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="698" />
-          <entry key="JSON" value="33" />
+          <entry key="JSON" value="39" />
           <entry key="JavaScript" value="41182" />
         </counts>
       </usages-collector>
@@ -66,66 +113,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/DashboardComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/elements/SpeakerDeck.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/SignIn.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducers/keypress.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/elements/UserListComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1137">
@@ -134,29 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="634">
-              <caret line="38" column="35" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="38" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/Dashboard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+            <state relative-caret-position="660">
+              <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -239,8 +208,8 @@
         <option value="$PROJECT_DIR$/server/app.js" />
         <option value="$PROJECT_DIR$/src/components/elements/SpeakerDeck.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/package.json" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -263,8 +232,8 @@
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/client/package.json" />
       <path value="$PROJECT_DIR$/package.json" />
-      <path value="$PROJECT_DIR$/src/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
@@ -288,11 +257,6 @@
               <item name="lightboard" type="b2602c69:ProjectViewProjectNode" />
               <item name="lightboard" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lightboard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lightboard" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -362,12 +326,12 @@
       <workItem from="1538502636548" duration="10000" />
       <workItem from="1538597197841" duration="191000" />
       <workItem from="1538597554537" duration="17311000" />
-      <workItem from="1538946530819" duration="20525000" />
+      <workItem from="1538946530819" duration="20723000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161700000" />
+    <option name="totallyTimeSpent" value="161898000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -729,17 +693,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="38" column="35" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="38" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
         </state>
       </provider>
     </entry>
