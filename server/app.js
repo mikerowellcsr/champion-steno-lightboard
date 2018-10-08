@@ -1,57 +1,42 @@
 const WebSocket = require('ws');
 const express = require('express');
-const path = require('path');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const fileUpload = require('express-fileupload');
 const cors = require('cors');
-const logger = require('morgan');
+const fileUpload = require('express-fileupload');
 
 const app = express();
+
+app.use(fileUpload());
+app.use(cors());
+
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.post('/upload', cors(corsOptions), function(req, res) {
+    if (!req.files) {
+        return res.status(400).send('No files were uploaded.');
+    }
+    // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+    let speakerPhoto = req.files.speakerPhoto0;
+    console.log(req.files);
+    // console.log(req.files.speakerPhoto.name.split('.')[1]);
+
+    // Use the mv() method to place the file somewhere on your server
+    speakerPhoto.mv('../public/uploads/speakerPhoto0.jpg', function(err) {
+        if (err) {
+            return res.status(500).send(err);
+        }
+
+        res.send('File uploaded!');
+    });
+});
 
 const wss = new WebSocket.Server({
     port: 8989
 });
 
-app.set('views', path.join(__dirname, 'views'));
-app.use(logger('dev'));
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(fileUpload());
-app.use('/public', express.static(__dirname + '/public'));
-
-app.post('/upload', (req, res) => {
-    console.log(req);
-    let imageFile = req.files.file;
-
-    imageFile.mv(`${__dirname}/public/${req.body.filename}.jpg`, function(err) {
-        if (err) {
-            return res.status(500).send(err);
-        }
-
-        res.json({file: `public/${req.body.filename}.jpg`});
-    });
-});
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    const err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-    // set locals, only providing error in development
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-    // render the error page
-    res.status(err.status || 500);
-    res.render('error');
-});
 
 const users = [];
 

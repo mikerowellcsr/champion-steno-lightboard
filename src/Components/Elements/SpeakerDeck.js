@@ -5,43 +5,26 @@ import {
     CardTitle,
     CardDeck,
     CardBody,
-    Form,
-    Input,
-    Progress
+    UncontrolledCollapse
 } from 'reactstrap';
+import { FilePond, registerPlugin } from 'react-filepond';
+import FilePondPluginFileMeta from 'filepond-plugin-file-metadata';
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+import 'filepond/dist/filepond.min.css';
 
 class SpeakerDeck extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            isUploading: false,
-            progress: 0,
-            images: null,
-            speaker0: '',
-            speaker1: '',
-            speaker2: '',
-            speaker3: '',
-            speaker4: ''
+            fadeIn: true
         };
+
     }
 
-    handleUploadImage = (e) => {
-        e.preventDefault();
-
-        const data = new FormData();
-        data.append('file', this.uploadInput.files[0]);
-        data.append('filename', this.fileName.value);
-
-        fetch('http://localhost:8000/upload', {
-            method: 'POST',
-            body: data,
-        }).then((response) => {
-            response.json().then((body) => {
-                this.setState({ imageURL: `http://localhost:8000/${body.file}` });
-            });
-        });
-    };
+    componentDidMount() {
+        registerPlugin(FilePondPluginFileMeta, FilePondPluginFileValidateType);
+    }
 
     render() {
 
@@ -53,66 +36,93 @@ class SpeakerDeck extends React.Component {
          return (
              <div>
                  <CardDeck>
-                     <Card color={this.props.activeSpeaker === 0 ? active.color : ''} className={this.props.activeSpeaker === 0 ? active.class : ''}>
-                         <CardImg top width="100%"
+                     <Card
+                         color={this.props.activeSpeaker === 0 ? active.color : ''}
+                         className={this.props.activeSpeaker === 0 ? active.class : ''}>
+                         <CardImg top
+                                  id="speaker0"
+                                  width="100%"
                                   src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
-                                  alt="Card image cap"/>
+                                  alt="Card image cap" />
                          <CardBody>
                              <CardTitle>Defense</CardTitle>
-                             <Form onSubmit={this.handleUploadImage}>
-                                 <Input
-                                     type="file"
-                                     name="speaker0"
-                                     id="speaker0"
-                                     ref={(ref) => {
-                                         this.uploadInput = ref;
-                                         this.fileName = 'speaker0';
-                                     }}
-                                 />
-                             </Form>
+                             <UncontrolledCollapse toggler="#speaker0">
+                                <FilePond
+                                    server="http://localhost:8000/upload"
+                                    name="speakerPhoto0"
+                                />
+                             </UncontrolledCollapse>
                          </CardBody>
                      </Card>
                      <Card color={this.props.activeSpeaker === 1 ? active.color : ''} className={this.props.activeSpeaker === 1 ? active.class : ''}>
-                         <CardImg top width="100%"
+                         <CardImg top
+                                  id="speaker1"
+                                  width="100%"
                                   src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
                                   alt="Card image cap"/>
                          <CardBody>
                              <CardTitle>Witness</CardTitle>
-
+                             <UncontrolledCollapse toggler="#speaker1">
+                                 <FilePond
+                                     server="http://localhost:8000/upload"
+                                     name="speakerPhoto1"
+                                     accepted-file-types="image/jpeg, image/png"
+                                 />
+                             </UncontrolledCollapse>
                          </CardBody>
                      </Card>
                      <Card color={this.props.activeSpeaker === 2 ? active.color : ''} className={this.props.activeSpeaker === 2 ? active.class : ''}>
-                         <CardImg top width="100%"
+                         <CardImg top
+                                  id="speaker2"
+                                  width="100%"
                                   src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
                                   alt="Card image cap"/>
                          <CardBody>
                              <CardTitle>The Court</CardTitle>
+                             <UncontrolledCollapse toggler="#speaker2">
+                                 <FilePond
+                                     server="http://localhost:8000/upload"
+                                     name="speakerPhoto2"
+                                     accepted-file-types="image/jpeg, image/png"
+                                 />
+                             </UncontrolledCollapse>
                          </CardBody>
                      </Card>
                      <Card color={this.props.activeSpeaker === 3 ? active.color : ''} className={this.props.activeSpeaker === 3 ? active.class : ''}>
-                         <CardImg top width="100%"
+                         <CardImg top
+                                  id="speaker3"
+                                  width="100%"
                                   src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
                                   alt="Card image cap"/>
                          <CardBody>
                              <CardTitle>Plaintiff</CardTitle>
-
+                             <UncontrolledCollapse toggler="#speaker3">
+                                 <FilePond
+                                     server="http://localhost:8000/upload"
+                                     name="speakerPhoto3"
+                                     accepted-file-types="image/jpeg, image/png"
+                                 />
+                             </UncontrolledCollapse>
                          </CardBody>
                      </Card>
                      <Card color={this.props.activeSpeaker === 4 ? active.color : ''} className={this.props.activeSpeaker === 4 ? active.class : ''}>
-                         <CardImg top width="100%"
+                         <CardImg top
+                                  id="speaker4"
+                                  width="100%"
                                   src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
                                   alt="Card image cap"/>
                          <CardBody>
                              <CardTitle>Juror</CardTitle>
-
+                             <UncontrolledCollapse toggler="#speaker4">
+                                 <FilePond
+                                     server="http://localhost:8000/upload"
+                                     name="speakerPhoto4"
+                                     accepted-file-types="image/jpeg, image/png"
+                                 />
+                             </UncontrolledCollapse>
                          </CardBody>
                      </Card>
                  </CardDeck>
-                 <Progress
-                     color="success"
-                     value="45"
-                     className="margin-top"
-                 />
              </div>
          );
      }
