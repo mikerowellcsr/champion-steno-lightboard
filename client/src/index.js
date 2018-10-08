@@ -19,7 +19,10 @@ const store = createStore(
     applyMiddleware(sagaMiddleWare)
 );
 
-const socket = new WebSocket('ws://localhost:8989');
+const HOST = window.location.origin.replace(/^http/, 'ws');
+console.log(HOST);
+
+const socket = new WebSocket(HOST);
 
 sagaMiddleWare.run(handleKeyPress, { socket });
 
