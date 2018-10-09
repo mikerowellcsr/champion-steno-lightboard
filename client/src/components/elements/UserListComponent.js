@@ -14,19 +14,19 @@ const UserListComponent =({ users }) => (
             color="primary"
             size="lg"
             id="userList">
-            Users <Badge color="primary">{users.length - 1}</Badge>
+            Users <Badge color="primary">{Object.keys(users).length}</Badge>
         </Button>
-        <UncontrolledCollapse toggler="#userList">
+        { users && users.length < 1 ? null : <UncontrolledCollapse toggler="#userList">
             <Card className="listgroup-users">
                 <CardBody>
-                        <ul>
-                            {users.map(user => (
-                                <li key={user.id}>{user.id}</li>
-                            ))}
-                        </ul>
+                    <ul>
+                        {Object.keys(users).map(id => (
+                            <li key={id}>{users[id].username}</li>
+                        ))}
+                    </ul>
                 </CardBody>
             </Card>
-        </UncontrolledCollapse>
+        </UncontrolledCollapse>}
     </div>
 );
 

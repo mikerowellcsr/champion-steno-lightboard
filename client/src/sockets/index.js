@@ -1,14 +1,19 @@
 import * as types from '../constants/ActionTypes';
 import {userLoggedOn, populateUserList, keyPressReceived } from '../actions';
-const HOST = window.location.origin.replace(/^http/, 'ws');
+import Uuid from 'uuid/v4';
+const HOST = process.env.REACT_APP_ENV === 'dev' ? 'ws://localhost:8000' : window.location.origin.replace(/^http/, 'ws');
 
 const setupSocket = (dispatch, id) => {
+    let userId;
     const socket = new WebSocket(HOST);
 
     socket.onopen = () => {
+        userId = Uuid();
+
         socket.send(JSON.stringify({
             type: types.USER_LOGGED_ON,
-            id: id,
+            id: userId,
+            username: id,
             logOnTime: Date.now().toString()
         }));
     };
@@ -30,6 +35,14 @@ const setupSocket = (dispatch, id) => {
             default:
                 break;
         }
+    };
+
+    socket.onclose = () => {
+        socket.send(JSON.stringify({
+            type: types.USER_LOGGED_OFF,
+            id: userId,
+            logOnTime: Date.now().toString()
+        }));
     };
 
     return socket;

@@ -15,7 +15,7 @@ app.use(cors());
 
 // Create new WebSockets connection.
 const wss = new WebSocket({
-    'server': httpServer
+    server: httpServer
 });
 
 // Serve static files from the React app
@@ -61,35 +61,31 @@ app.post('/upload', cors(corsOptions), function(req, res) {
     });
 });
 
-// const wss = new WebSocket.Server({
-//     port: 8989
-// });
-
-const users = [];
+const users = {};
 
 const broadcast = (data, ws) => {
     wss.clients.forEach(client => {
-         if (client.readyState === WebSocket.OPEN && client !== ws) {
+         if (client !== ws && client.readyState === 1) {
              client.send(JSON.stringify(data));
          }
     });
 };
 
 wss.on('connection', ws => {
-    let index;
+    let userId;
 
     ws.on('message', message => {
         const data = JSON.parse(message);
         console.log(data);
         switch (data.type) {
             case 'USER_LOGGED_ON':
-                index = users.length;
 
-                users.push({
+                users[data.id] = {
                     username: data.username,
-                    id: data.id,
                     logOnTime: data.logOnTime
-                });
+                };
+
+                userId = data.id;
 
                 ws.send(JSON.stringify({
                     type: 'LIST_USERS',
@@ -100,7 +96,11 @@ wss.on('connection', ws => {
                     type: 'LIST_USERS',
                     users
                 }, ws);
+
+                console.log('users in ' + JSON.stringify(users));
+
                 break;
+
             case 'SEND_KEY_PRESS':
                 broadcast({
                     type: 'SEND_KEY_PRESS',
@@ -108,15 +108,21 @@ wss.on('connection', ws => {
                 }, ws);
 
                 console.log('received: ' +  data.key);
+
                 break;
+
             default:
                 break;
         }
     });
 
     ws.on('close', () => {
-        users.splice(index, 1);
-        console.log('user left.');
+        console.log('user logged off ' +  userId);
+
+        if (userId){
+            delete users[userId];
+        }
+
         broadcast({
             type: 'LIST_USERS',
             users
@@ -124,6 +130,6 @@ wss.on('connection', ws => {
     });
 });
 
-httpServer.listen(PORT,() => console.log(`Listening on ${PORT}!`));
+httpServer.listen(PORT, () => console.log(`Listening on ${PORT}!`));
 
 module.exports = app;
