@@ -41,7 +41,7 @@ class Dashboard extends React.Component {
 
     componentDidMount() {
         const { store } = this.context;
-        setupSocket(store.dispatch, 'Me');
+        setupSocket(store.dispatch, this.props.authUser.providerData[0].uid, '000');
     }
 
     render() {
@@ -97,7 +97,7 @@ class Dashboard extends React.Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm="2" className="margin-top">
+                        <Col sm="4" className="margin-top">
                             <div className="margin-bottom">
                                 <UserList />
                             </div>

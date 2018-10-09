@@ -13,6 +13,7 @@
 .eslintrc.*
 
 # misc
+appcopy.js
 .DS_Store
 .env.local
 .env.development.local

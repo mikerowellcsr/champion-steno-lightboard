@@ -19,7 +19,7 @@ const store = createStore(
     applyMiddleware(sagaMiddleWare)
 );
 
-const HOST = window.location.origin.replace(/^http/, 'ws');
+const HOST = process.env.REACT_APP_ENV === 'dev' ? 'ws://localhost:8000' : window.location.origin.replace(/^http/, 'ws');
 console.log(HOST);
 
 const socket = new WebSocket(HOST);
