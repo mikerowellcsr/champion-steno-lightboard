@@ -2,6 +2,7 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 import withAuthorization from './withAuthorization';
 import {
+    Badge,
     Col,
     Input,
     Row
@@ -77,7 +78,7 @@ class Dashboard extends React.Component {
                 <DocumentTitle title="Lightboard Dashboard"/>
                 <Navigation />
                 <div className="main-container">
-                        <h1>
+                        <h1 className="speaker-deck__header">
                             Speaker Deck
                         </h1>
                     <SpeakerDeck activeSpeaker={this.state.activeSpeaker} />
@@ -98,12 +99,12 @@ class Dashboard extends React.Component {
                         <Col sm={5} />
                     </Row>
                     <div>
-                        <Col sm="4" className="margin-top">
+                        <Col sm={6}>
                             <div className="margin-bottom">
                                 <UserList />
                             </div>
                         </Col>
-                        <Col sm="10" />
+                        <Col sm={10} />
                     </div>
                 </div>
             </div>

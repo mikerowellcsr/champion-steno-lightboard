@@ -125,7 +125,8 @@ wss.on('connection', ws => {
                 console.log('\n users in ' +   JSON.stringify(users.listUsers()));
 
                 break;
-
+            case 'USER_LOGGED_OFF':
+                console.log('user logged off!');
             case 'SEND_KEY_PRESS':
                 broadcast({
                     type: 'SEND_KEY_PRESS',
@@ -150,7 +151,7 @@ wss.on('connection', ws => {
         }
 
         broadcast({
-            type: 'LIST_USERS',
+            type: 'USER_LOGGED_OFF',
             users: users.listUsers()
         }, ws);
 
