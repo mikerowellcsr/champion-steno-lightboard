@@ -13,6 +13,7 @@ import {
     Row
 } from 'reactstrap';
 import Logo from '../../assets/img/champion-steno-logo-300x206.png';
+import Navigation from "../Navigation";
 
 class UserSignIn extends React.Component {
     constructor(props) {
@@ -42,6 +43,8 @@ class UserSignIn extends React.Component {
         return(
             <div className="sign-in-box">
                 <DocumentTitle title="Champion Steno Sign-In"/>
+                <Navigation />
+                <div className="padding-top" />
                 <Container>
                     <Row>
                         <Col xs="6" sm="4" />
