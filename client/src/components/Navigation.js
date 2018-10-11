@@ -137,6 +137,11 @@ class NavigationAuth extends Component {
                                      Home Page
                                  </NavLink>
                              </NavItem>
+                             <NavItem>
+                                 <NavLink href="/signin">
+                                     Sign In
+                                 </NavLink>
+                             </NavItem>
                          </Nav>
                      </Collapse>
                  </Navbar>

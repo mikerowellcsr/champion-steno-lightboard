@@ -1,7 +1,6 @@
 import React from 'react';
 import {
     Badge,
-    UncontrolledCollapse,
     Table
 } from 'reactstrap';
 
