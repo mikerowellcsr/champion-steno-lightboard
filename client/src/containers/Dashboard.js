@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 import DashboardComponent from '../components/DashboardComponent';
-import { userLoggedOn } from "../actions";
+import {
+    userLoggedOn,
+    userLoggedOff
+} from "../actions";
 
 const mapDispatchToProps = dispatch => ({
     dispatch: (username, socketId) => {

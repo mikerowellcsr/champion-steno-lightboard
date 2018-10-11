@@ -3,8 +3,7 @@ import * as types from '../constants/ActionTypes';
 export const userLoggedOn = id => ({
     type: types.USER_LOGGED_ON,
     id: id,
-    logOnTime: Date.now().toString(),
-    logOutTime: ''
+    logOnTime: Date.now().toString()
 });
 
 export const populateUserList = users => ({

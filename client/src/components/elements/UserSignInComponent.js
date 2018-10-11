@@ -50,7 +50,7 @@ class UserSignIn extends React.Component {
                             <Form onSubmit={this.handleSubmit}>
                                 <FormGroup>
                                     <Label for="name" size="lg" sm={2}>Name</Label>
-                                    <Col sm={10}>
+                                    <Col sm={10} className='text-input'>
                                         <Input
                                             autoFocus
                                             className="margin-bottom__thin"
