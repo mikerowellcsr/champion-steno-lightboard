@@ -13,10 +13,12 @@ import SignInPage from './components/SignIn'
 import withAuthentication from './components/withAuthentication';
 import './App.css';
 import DashboardComponent from './containers/Dashboard';
+import Favicon from 'react-favicon';
 
 const App = () =>
     <BrowserRouter>
         <div>
+            <Favicon url={['/images/championcup.png']}/>
             <Route
                 exact path={routes.LIGHTBOX}
                 component={LightboxPage}
