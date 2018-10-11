@@ -15,15 +15,15 @@ import DocumentTitle from 'react-document-title';
 
 const SignInPage = ({ history }) =>
     <div className="sign-in-box">
-        <DocumentTitle title="Lightboard Admin Sign-In"/>
+        <DocumentTitle title="Admin Sign-In"/>
         <Container>
             <Row>
                 <Col xs="6" sm="4" />
                 <Col xs="6" sm="4">
                     <img src={Logo} className='sign-in__logo' alt="Champion Steno Logo" />
-                    <h3>
+                    <h4>
                         Lightboard Admin Sign-In
-                    </h3>
+                    </h4>
                     <SignInForm history={history} />
                 </Col>
                 <Col xs="6" sm="4" />
