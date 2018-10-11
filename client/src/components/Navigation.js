@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,13 +23,12 @@ import DocumentTitle from 'react-document-title';
 import ConfigSpeakerDeck from './elements/SpeakerDeck';
 import { connect } from 'react-redux';
 
-import * as routes from '../constants/Routes';
-
 const Navigation = ({ authUser }) =>
     <div>
         {
             authUser
-            ? <NavigationAuth user={authUser.email}/>
+            ? <NavigationAuth
+                    user={authUser.email} />
             : <NavigationNonAuth/>
         }
     </div>;
@@ -71,7 +69,7 @@ class NavigationAuth extends Component {
         library.add(faSignOutAlt);
 
         return <div>
-            <Navbar light expand="md">
+            <Navbar light fixed="top" expand="md">
                 <NavbarBrand href="/">Champion Steno Lightboard</NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
@@ -117,11 +115,35 @@ class NavigationAuth extends Component {
     }
 }
 
-const NavigationNonAuth = () =>
-    <ul>
-        <li><Link to={routes.LIGHTBOX}>Lightbox</Link></li>
-        <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
-    </ul>;
+ class NavigationNonAuth extends React.Component {
+     constructor(props) {
+         super(props);
+
+         this.state = {
+             isOpen: false
+         };
+     }
+
+     render() {
+         return(
+             <div>
+                 <Navbar light fixed="top" expand="md">
+                     <NavbarBrand href="/">Champion Steno Lightboard</NavbarBrand>
+                     <NavbarToggler onClick={this.toggle} />
+                     <Collapse isOpen={this.state.isOpen} navbar>
+                         <Nav className="ml-auto" navbar>
+                             <NavItem>
+                                 <NavLink href="https://www.championsteno.com/">
+                                     Home Page
+                                 </NavLink>
+                             </NavItem>
+                         </Nav>
+                     </Collapse>
+                 </Navbar>
+             </div>
+        );
+     }
+ }
 
 const mapStateToProps = (state) => ({
     authUser: state.sessionState.authUser,

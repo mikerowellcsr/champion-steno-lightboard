@@ -53,6 +53,7 @@ class UserSignIn extends React.Component {
                                     <Col sm={10}>
                                         <Input
                                             autoFocus
+                                            className="margin-bottom__thin"
                                             bsSize="lg"
                                             type="name"
                                             name="name"
