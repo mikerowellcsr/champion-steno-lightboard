@@ -1,4 +1,55 @@
-@import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree:400,500,600|Rubik:300,400');
+@font-face {
+    font-family: "Europa-Bold";
+    src: url("./assets/fonts/EuropaBold.eot"); /* IE9 Compat Modes */
+    src: url("./assets/fonts/EuropaBold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./assets/fonts/EuropaBold.otf") format("opentype"), /* Open Type Font */
+    url("./assets/fonts/EuropaBold.svg") format("svg"), /* Legacy iOS */
+    url("./assets/fonts/EuropaBold.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./assets/fonts/EuropaBold.woff") format("woff"), /* Modern Browsers */
+    url("./assets/fonts/EuropaBold.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Europa-BoldItalic";
+    src: url("./assets/fonts/EuropaBoldItalic.eot"); /* IE9 Compat Modes */
+    src: url("./assets/fonts/EuropaBoldItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./assets/fonts/EuropaBoldItalic.otf") format("opentype"), /* Open Type Font */
+    url("./assets/fonts/EuropaBoldItalic.svg") format("svg"), /* Legacy iOS */
+    url("./assets/fonts/EuropaBoldItalic.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./assets/fonts/EuropaBoldItalic.woff") format("woff"), /* Modern Browsers */
+    url("./assets/fonts/EuropaBoldItalic.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Europa-Regular";
+    src: url("./assets/fonts/EuropaRegular.eot"); /* IE9 Compat Modes */
+    src: url("./assets/fonts/EuropaRegular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./assets/fonts/EuropaRegular.otf") format("opentype"), /* Open Type Font */
+    url("./assets/fonts/EuropaRegular.svg") format("svg"), /* Legacy iOS */
+    url("./assets/fonts/EuropaRegular.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./assets/fonts/EuropaRegular.woff") format("woff"), /* Modern Browsers */
+    url("./assets/fonts/EuropaRegular.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Europa-RegularItalic";
+    src: url("./assets/fonts/EuropaRegularItalic.eot"); /* IE9 Compat Modes */
+    src: url("./assets/fonts/EuropaRegularItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./assets/fonts/EuropaRegularItalic.otf") format("opentype"), /* Open Type Font */
+    url("./assets/fonts/EuropaRegularItalic.svg") format("svg"), /* Legacy iOS */
+    url("./assets/fonts/EuropaRegularItalic.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./assets/fonts/EuropaRegularItalic.woff") format("woff"), /* Modern Browsers */
+    url("./assets/fonts/EuropaRegularItalic.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
 @media (min-width: 576px) {
     .card-deck .card {
         margin-left: 0;
