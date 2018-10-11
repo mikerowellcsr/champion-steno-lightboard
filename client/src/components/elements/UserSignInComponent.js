@@ -41,7 +41,7 @@ class UserSignIn extends React.Component {
     render() {
         return(
             <div className="sign-in-box">
-                <DocumentTitle title="Champion Steno Lightboard"/>
+                <DocumentTitle title="Champion Steno Sign-In"/>
                 <Container>
                     <Row>
                         <Col xs="6" sm="4" />

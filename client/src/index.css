@@ -11,10 +11,28 @@
 }
 
 body, html {
-    background-color: #f4f7f6;
+    background-color: #FEFEFE;
     margin: 0;
     padding: 0;
-    font-family: 'Bai Jamjuree', sans-serif;
+    font-family: 'Europa-Bold', sans-serif;
+}
+
+input {
+    border-radius: 0;
+}
+
+.btn-info {
+    border-color: unset;
+    border-radius: 0;
+}
+
+.btn-info.disabled, .btn-info:disabled {
+    border-color: unset !important;
+    background-color: #D5D5D3 !important;
+}
+
+.bg-primary {
+    background-color: #355263 !important;
 }
 
  .card {
@@ -25,6 +43,10 @@ body, html {
  .col-sm-10 {
      max-width: 100%;
  }
+
+.col-form-label-lg {
+    padding-bottom: .7em;
+}
 
  .form-control:focus {
      border-color: #DBE0DF;
@@ -59,7 +81,7 @@ body, html {
 }
 
 .main-container h1 {
-    margin: 0 0 1em 0;
+    margin: 1em 0 1em 0;
 }
 
 .margin-bottom {
@@ -76,15 +98,16 @@ body, html {
 }
 
 .navbar {
-    padding: 1.3rem 1.3rem !important;
+    padding: 0 2em 0 0;
     border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
-.navbar-brand {
-    font-size: 1.3em;
+.navbar-light .navbar-brand {
+    padding: 1.3em;
+    color: #1F313F;
 }
 
-.navbar-light .navbar-brand {
+.navbar-light {
     color: rgba(0,0,0,.5) !important;
 }
 
@@ -93,7 +116,7 @@ body, html {
  }
 
 .sign-in-box .btn-info {
-    background-color: #00B9FF !important;
+    background-color: #355263;
 }
 
 .sign-in-box h3 {

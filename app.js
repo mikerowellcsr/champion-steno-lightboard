@@ -107,7 +107,7 @@ wss.on('connection', ws => {
                 if (!users.checkIfUserExists(data.username)) {
                     users.addUser({
                         id: data.id,
-                        username: data.username.trim(),
+                        username: data.username ? data.username.trim() : '',
                         logOnTime: data.logOnTime
                     });
                 }
