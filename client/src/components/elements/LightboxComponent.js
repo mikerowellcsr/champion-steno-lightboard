@@ -1,6 +1,5 @@
 import React from 'react';
 import { UserSignIn } from '../../containers/UserSignIn';
-import PropTypes from 'prop-types';
 import SpeakerDeckNoAuth from './SpeakerDeckNoAuth';
 import {
     Container,
@@ -12,26 +11,16 @@ const LightboxComponent = ({ users, keyPress }) => {
         <div>
             {users && users.length === 0
                 ? <UserSignIn />
-                :  <Container className="main-container">
+                :  <div className="main-container">
                     <Row>
                         <h1>
-                            Speaker Deck
+                            Champion Steno Lightboard
                         </h1>
                     </Row>
                     <SpeakerDeckNoAuth activeSpeaker={keyPress} />
-                </Container>}
+                </div>}
         </div>
     );
-};
-
-LightboxComponent.propTypes = {
-    users: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            logOnTime: PropTypes.string.isRequired
-        }).isRequired
-    ).isRequired,
-    key: PropTypes.number
 };
 
 export default LightboxComponent;

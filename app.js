@@ -61,13 +61,34 @@ app.post('/upload', cors(corsOptions), function(req, res) {
     });
 });
 
-const users = {};
+const users = {
+    list: [],
+    listUsers: function() {
+        return this.list;
+    },
+
+    addUser: function(user) {
+        this.list.push(user);
+    },
+
+    removeUser: function(id) {
+         this.list.forEach((user, index) => {
+            if (user.id === id) {
+                this.list.splice(index, 1);
+            }
+        })
+    },
+
+    checkIfUserExists: function(username) {
+        return this.list.some(user => user.username === username);
+    }
+};
 
 const broadcast = (data, ws) => {
     wss.clients.forEach(client => {
-         if (client !== ws && client.readyState === 1) {
-             client.send(JSON.stringify(data));
-         }
+        if (client !== ws && client.readyState === 1) {
+            client.send(JSON.stringify(data));
+        }
     });
 };
 
@@ -80,24 +101,28 @@ wss.on('connection', ws => {
         switch (data.type) {
             case 'USER_LOGGED_ON':
 
-                users[data.id] = {
-                    username: data.username,
-                    logOnTime: data.logOnTime
-                };
-
                 userId = data.id;
+
+                console.log('username: ' + data.username);
+                if (!users.checkIfUserExists(data.username)) {
+                    users.addUser({
+                        id: data.id,
+                        username: data.username.trim(),
+                        logOnTime: data.logOnTime
+                    });
+                }
 
                 ws.send(JSON.stringify({
                     type: 'LIST_USERS',
-                    users
+                    users: users.listUsers()
                 }));
 
                 broadcast({
                     type: 'LIST_USERS',
-                    users
+                    users: users.listUsers()
                 }, ws);
 
-                console.log('users in ' + JSON.stringify(users));
+                console.log('\n users in ' +   JSON.stringify(users.listUsers()));
 
                 break;
 
@@ -119,14 +144,16 @@ wss.on('connection', ws => {
     ws.on('close', () => {
         console.log('user logged off ' +  userId);
 
-        if (userId){
-            delete users[userId];
+        if (userId) {
+            users.removeUser(userId);
+            // delete users.list[userId];
         }
 
         broadcast({
             type: 'LIST_USERS',
-            users
+            users: users.listUsers()
         }, ws);
+
     });
 });
 

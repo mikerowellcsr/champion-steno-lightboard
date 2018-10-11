@@ -42,7 +42,7 @@ class SpeakerDeck extends React.Component {
                          <CardImg top
                                   id="speaker0"
                                   width="100%"
-                                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
+                                  src="/images/speaker-placeholder.png"
                                   alt="Card image cap" />
                          <CardBody>
                              <CardTitle>Defense</CardTitle>
@@ -58,7 +58,7 @@ class SpeakerDeck extends React.Component {
                          <CardImg top
                                   id="speaker1"
                                   width="100%"
-                                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
+                                  src="/images/speaker-placeholder.png"
                                   alt="Card image cap"/>
                          <CardBody>
                              <CardTitle>Witness</CardTitle>
@@ -75,7 +75,7 @@ class SpeakerDeck extends React.Component {
                          <CardImg top
                                   id="speaker2"
                                   width="100%"
-                                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
+                                  src="/images/speaker-placeholder.png"
                                   alt="Card image cap"/>
                          <CardBody>
                              <CardTitle>The Court</CardTitle>
@@ -92,7 +92,7 @@ class SpeakerDeck extends React.Component {
                          <CardImg top
                                   id="speaker3"
                                   width="100%"
-                                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
+                                  src="/images/speaker-placeholder.png"
                                   alt="Card image cap"/>
                          <CardBody>
                              <CardTitle>Plaintiff</CardTitle>
@@ -109,10 +109,10 @@ class SpeakerDeck extends React.Component {
                          <CardImg top
                                   id="speaker4"
                                   width="100%"
-                                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
+                                  src="/images/speaker-placeholder.png"
                                   alt="Card image cap"/>
                          <CardBody>
-                             <CardTitle>Juror</CardTitle>
+                             <CardTitle>Defense 2</CardTitle>
                              <UncontrolledCollapse toggler="#speaker4">
                                  <FilePond
                                      server="http://localhost:8000/upload"
