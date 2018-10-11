@@ -12,7 +12,7 @@ import {
     Label,
     Row
 } from 'reactstrap';
-import Logo from "../../assets/img/champion-steno-logo-300x206.png";
+import Logo from '../../assets/img/champion-steno-logo-300x206.png';
 
 class UserSignIn extends React.Component {
     constructor(props) {
