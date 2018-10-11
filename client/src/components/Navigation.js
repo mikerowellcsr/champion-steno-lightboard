@@ -4,6 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCog,
+    faHome,
     faUser,
     faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
@@ -70,7 +71,7 @@ class NavigationAuth extends Component {
 
         return <div>
             <Navbar light fixed="top" expand="md">
-                <NavbarBrand href="/">Champion Steno Lightboard</NavbarBrand>
+                <NavbarBrand href="/dashboard">Champion Steno Lightboard</NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
@@ -125,6 +126,9 @@ class NavigationAuth extends Component {
      }
 
      render() {
+         library.add(faHome);
+         library.add(faUser);
+
          return(
              <div>
                  <Navbar light fixed="top" expand="md">
@@ -134,12 +138,14 @@ class NavigationAuth extends Component {
                          <Nav className="ml-auto" navbar>
                              <NavItem>
                                  <NavLink href="https://www.championsteno.com/">
-                                     Home Page
+                                     <FontAwesomeIcon icon="home" />
+                                     &nbsp;&nbsp;Home Page
                                  </NavLink>
                              </NavItem>
                              <NavItem>
                                  <NavLink href="/signin">
-                                     Sign In
+                                     <FontAwesomeIcon icon="user" />
+                                     &nbsp;&nbsp;Admin Sign-In
                                  </NavLink>
                              </NavItem>
                          </Nav>
