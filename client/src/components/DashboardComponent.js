@@ -2,7 +2,6 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 import withAuthorization from './withAuthorization';
 import {
-    Badge,
     Col,
     Input,
     Row
