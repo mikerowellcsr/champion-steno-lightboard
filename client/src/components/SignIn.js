@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { auth } from '../firebase';
-import * as routes from '../constants/Routes';
 import {
     Button,
     Col,
@@ -12,16 +11,18 @@ import {
     Row
 } from 'reactstrap';
 import Logo from '../assets/img/champion-steno-logo-300x206.png';
+import DocumentTitle from 'react-document-title';
 
 const SignInPage = ({ history }) =>
     <div className="sign-in-box">
+        <DocumentTitle title="Lightbox Dashboard"/>
         <Container>
             <Row>
                 <Col xs="6" sm="4" />
                 <Col xs="6" sm="4">
                     <img src={Logo} className='sign-in__logo' alt="Champion Steno Logo" />
                     <h3>
-                        Lightbox Admin Sign-In
+                        Lightboard Admin Sign-In
                     </h3>
                     <SignInForm history={history} />
                 </Col>

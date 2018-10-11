@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
     Badge,
     Button,
@@ -20,8 +19,8 @@ const UserListComponent =({ users }) => (
             <Card className="listgroup-users">
                 <CardBody>
                     <ul>
-                        {Object.keys(users).map(id => (
-                            <li key={id}>{users[id].username}</li>
+                        {users.map(user => (
+                            <li key={user.username}>{user.username}</li>
                         ))}
                     </ul>
                 </CardBody>
@@ -29,14 +28,5 @@ const UserListComponent =({ users }) => (
         </UncontrolledCollapse>}
     </div>
 );
-
-UserListComponent.propTypes = {
-    users: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            logOnTime: PropTypes.string.isRequired
-        }).isRequired
-    ).isRequired
-};
 
 export default UserListComponent;

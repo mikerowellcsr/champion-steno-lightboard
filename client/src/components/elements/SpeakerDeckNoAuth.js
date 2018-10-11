@@ -1,7 +1,6 @@
 import React from 'react';
 import {
     Card,
-    Button,
     CardImg,
     CardTitle,
     CardDeck,
@@ -18,7 +17,7 @@ const SpeakerDeck = ({ activeSpeaker }) => {
         <CardDeck>
             <Card color={activeSpeaker === 0 ? active.color : ''} className={activeSpeaker === 0 ? active.class : ''}>
                 <CardImg top width="100%"
-                         src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
+                         src="/images/speaker-placeholder.png"
                          alt="Card image cap"/>
                 <CardBody>
                     <CardTitle>Defense</CardTitle>
@@ -26,7 +25,7 @@ const SpeakerDeck = ({ activeSpeaker }) => {
             </Card>
             <Card color={activeSpeaker === 1 ? active.color : ''} className={activeSpeaker === 1 ? active.class : ''}>
                 <CardImg top width="100%"
-                         src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
+                         src="/images/speaker-placeholder.png"
                          alt="Card image cap"/>
                 <CardBody>
                     <CardTitle>Witness</CardTitle>
@@ -34,7 +33,7 @@ const SpeakerDeck = ({ activeSpeaker }) => {
             </Card>
             <Card color={activeSpeaker === 2 ? active.color : ''} className={activeSpeaker === 2 ? active.class : ''}>
                 <CardImg top width="100%"
-                         src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
+                         src="/images/speaker-placeholder.png"
                          alt="Card image cap"/>
                 <CardBody>
                     <CardTitle>The Court</CardTitle>
@@ -42,7 +41,7 @@ const SpeakerDeck = ({ activeSpeaker }) => {
             </Card>
             <Card color={activeSpeaker === 3 ? active.color : ''} className={activeSpeaker === 3 ? active.class : ''}>
                 <CardImg top width="100%"
-                         src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
+                         src="/images/speaker-placeholder.png"
                          alt="Card image cap"/>
                 <CardBody>
                     <CardTitle>Plaintiff</CardTitle>
@@ -50,10 +49,10 @@ const SpeakerDeck = ({ activeSpeaker }) => {
             </Card>
             <Card color={activeSpeaker === 4 ? active.color : ''} className={activeSpeaker === 4 ? active.class : ''}>
                 <CardImg top width="100%"
-                         src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
+                         src="/images/speaker-placeholder.png"
                          alt="Card image cap"/>
                 <CardBody>
-                    <CardTitle>Juror</CardTitle>
+                    <CardTitle>Defense 2</CardTitle>
                 </CardBody>
             </Card>
         </CardDeck>

@@ -1,9 +1,39 @@
-@import url('https://fonts.googleapis.com/css?family=Rubik');
+@import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree:400,500,600|Rubik:300,400');
+@media (min-width: 576px) {
+    .card-deck .card {
+        margin-left: 0;
+    }
+
+     .card-deck {
+         margin-left: 0;
+         margin-right: 0;
+     }
+}
 
 body, html {
+    background-color: #f4f7f6;
     margin: 0;
     padding: 0;
-    font-family: 'Rubik', sans-serif !important;
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+
+ .card {
+     border: none;
+     background-color: #f4f7f6;
+ }
+
+ .col-sm-10 {
+     max-width: 100%;
+ }
+
+ .form-control:focus {
+     border-color: #DBE0DF;
+     -webkit-box-shadow: unset;
+     box-shadow: unset;
+ }
+
+.form-control-lg {
+    border-radius: 0;
 }
 
 .inverse {
@@ -14,12 +44,22 @@ body, html {
     margin: 1em 0 1em 0;
 }
 
+.listgroup-users > .card-body {
+    padding: 1em 0 1em 0;
+}
+
+.listgroup-users > .card-body ul {
+    list-style: none;
+    padding-left: 0;
+}
+
 .main-container {
+    margin: 0 5em 0 5em;
     padding: 3em 0 3em 0;
 }
 
 .main-container h1 {
-    margin: 0 0 2em 0;
+    margin: 0 0 1em 0;
 }
 
 .margin-bottom {
@@ -28,6 +68,20 @@ body, html {
 
 .margin-top {
     margin: 2em 0 0 0;
+}
+
+.margin-top .col-sm-1 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar {
+    padding: 1.3rem 1.3rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.navbar-brand {
+    font-size: 1.3em;
 }
 
 .navbar-light .navbar-brand {
@@ -52,5 +106,27 @@ body, html {
 }
 
 .sign-in__logo {
-    margin: 4em 2em 2em 2em;
+    margin: 4em 2em 4em 2em;
+}
+
+.text-input {
+    border: 1px solid #DBE0DF;
+    height: 3.2em;
+}
+
+text-input:focus {
+    outline: none;
+}
+
+.text-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #DBE0DF;
+    opacity: 1; /* Firefox */
+}
+
+.text-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #DBE0DF;
+}
+
+.text-input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #DBE0DF;
 }
