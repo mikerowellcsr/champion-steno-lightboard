@@ -14,7 +14,7 @@ const setupSocket = (dispatch, id) => {
             type: types.USER_LOGGED_ON,
             id: userId,
             username: id,
-            logOnTime: Date.now().toString()
+            logOnTime: new Date()
         }));
     };
 
