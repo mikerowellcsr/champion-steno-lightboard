@@ -74,7 +74,7 @@ class Dashboard extends React.Component {
 
         return(
             <div>
-                <DocumentTitle title="Lightbox Dashboard"/>
+                <DocumentTitle title="Lightboard Dashboard"/>
                 <Navigation />
                 <div className="main-container">
                         <h1>

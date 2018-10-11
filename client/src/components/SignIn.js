@@ -15,7 +15,7 @@ import DocumentTitle from 'react-document-title';
 
 const SignInPage = ({ history }) =>
     <div className="sign-in-box">
-        <DocumentTitle title="Lightbox Dashboard"/>
+        <DocumentTitle title="Lightboard Admin Sign-In"/>
         <Container>
             <Row>
                 <Col xs="6" sm="4" />
