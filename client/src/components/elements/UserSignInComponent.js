@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import setupSocket from '../../sockets';
+import DocumentTitle from 'react-document-title';
 import {
     Button,
     Container,
@@ -40,14 +41,12 @@ class UserSignIn extends React.Component {
     render() {
         return(
             <div className="sign-in-box">
+                <DocumentTitle title="Champion Steno Lightboard"/>
                 <Container>
                     <Row>
                         <Col xs="6" sm="4" />
                         <Col xs="6" sm="4">
                             <img src={Logo} className='sign-in__logo' alt="Champion Steno Logo" />
-                            <h3>
-                                Champion Steno Lightbox
-                            </h3>
                             <Form onSubmit={this.handleSubmit}>
                                 <FormGroup>
                                     <Label for="name" size="lg" sm={2}>Name</Label>
@@ -58,7 +57,7 @@ class UserSignIn extends React.Component {
                                             type="name"
                                             name="name"
                                             id="name"
-                                            placeholder="Type in your full name."
+                                            placeholder="Type in your name."
                                             onChange={this.handleChange}
                                         />
                                     </Col>

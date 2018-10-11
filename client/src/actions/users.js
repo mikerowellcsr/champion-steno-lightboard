@@ -3,6 +3,7 @@ import * as types from '../constants/ActionTypes';
 const users = (state = [], action) => {
     switch (action.type) {
         case types.USER_LOGGED_ON:
+            console.log(state);
             return state.concat([{
                 username: action.username,
                 socketId: action.socketId

@@ -2,7 +2,6 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 import withAuthorization from './withAuthorization';
 import {
-    Container,
     Col,
     Input,
     Row
@@ -77,34 +76,36 @@ class Dashboard extends React.Component {
             <div>
                 <DocumentTitle title="Lightbox Dashboard"/>
                 <Navigation />
-                <Container className="main-container">
-                    <Row>
+                <div className="main-container">
                         <h1>
                             Speaker Deck
                         </h1>
-                    </Row>
                     <SpeakerDeck activeSpeaker={this.state.activeSpeaker} />
                     <Row className="margin-top">
-                        <Col sm={1}>
+                        <Col sm={5} />
+                        <Col sm={2}>
                             <Input
+                                className="text-input"
                                 type="text"
                                 name="control"
-                                bssize="lg"
+                                bsSize="lg"
+                                placeholder="Enter keystrokes."
                                 ref="control"
                                 autoFocus
                                 onChange={handleKeyPress}
                                 invalid={!this.state.inputValid}/>
                         </Col>
+                        <Col sm={5} />
                     </Row>
-                    <Row>
+                    <div>
                         <Col sm="4" className="margin-top">
                             <div className="margin-bottom">
                                 <UserList />
                             </div>
                         </Col>
                         <Col sm="10" />
-                    </Row>
-                </Container>
+                    </div>
+                </div>
             </div>
         );
     }
