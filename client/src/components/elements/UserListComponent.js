@@ -33,31 +33,14 @@ const UserListComponent =({ users }) => (
                 users && users.length < 1
                 ? null
                 : users.map(user => (
-                        <tr>
-                            <td key={user.username}>{user.username}</td>
-                            <td key={user.username}>{convertTimestamp(user.logOnTime)}</td>
+                        <tr key={user.username}>
+                            <td >{user.username}</td>
+                            <td>{convertTimestamp(user.logOnTime)}</td>
                         </tr>
                     ))
             }
             </tbody>
         </Table>
-        {/*<Button*/}
-            {/*color="primary"*/}
-            {/*size="lg"*/}
-            {/*id="userList">*/}
-            {/*Users <Badge color="primary">{Object.keys(users).length}</Badge>*/}
-        {/*</Button>*/}
-        {/*{ users && users.length < 1 ? null : <UncontrolledCollapse toggler="#userList">*/}
-            {/*<Card className="listgroup-users">*/}
-                {/*<CardBody>*/}
-                    {/*<ul>*/}
-                        {/*{users.map(user => (*/}
-                            {/*<li key={user.username}>{user.username}</li>*/}
-                        {/*))}*/}
-                    {/*</ul>*/}
-                {/*</CardBody>*/}
-            {/*</Card>*/}
-        {/*</UncontrolledCollapse>}*/}
     </div>
 );
 

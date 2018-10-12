@@ -88,52 +88,55 @@ class SignInForm extends Component {
         return(
             <div>
                 <Form onSubmit={this.onSubmit}>
-                    <FormGroup row>
-                        <Label
-                            size="lg"
-                            for="email"
-                            sm={4}>
+                    <div className="text-input">
+                        <FormGroup row>
+                            <Label
+                                size="lg"
+                                for="email"
+                                sm={4}>
                                 Email
-                        </Label>
-                        <Col sm={8}>
-                            <Input
-                                bsSize="lg"
-                                type="text"
-                                name="email"
-                                id="email"
-                                value={this.email}
-                                onChange={e => this.setState(byPropKey('email', e.target.value))}
-                                required
-                            />
-                        </Col>
-                    </FormGroup>
-                    <FormGroup row>
-                        <Label
-                            size="lg"
-                            for="password"
-                            sm={4}>
+                            </Label>
+                            <Col sm={8}>
+                                <Input
+                                    autoFocus
+                                    bsSize="lg"
+                                    type="text"
+                                    name="email"
+                                    id="email"
+                                    value={this.email}
+                                    onChange={e => this.setState(byPropKey('email', e.target.value))}
+                                    required
+                                />
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label
+                                size="lg"
+                                for="password"
+                                sm={4}>
                                 Password
-                        </Label>
-                        <Col sm={8}>
-                            <Input
-                                bsSize="lg"
-                                type="password"
-                                name="password"
-                                id="password"
-                                value={this.password}
-                                onChange={e => this.setState(byPropKey('password', e.target.value))}
-                                required
-                            />
-                        </Col>
-                    </FormGroup>
-                    <Button
-                        size="lg"
-                        type="submit"
-                        disabled={isInvalid}
-                        color="info"
-                        block>
-                        Log in
-                    </Button>
+                            </Label>
+                            <Col sm={8}>
+                                <Input
+                                    bsSize="lg"
+                                    type="password"
+                                    name="password"
+                                    id="password"
+                                    value={this.password}
+                                    onChange={e => this.setState(byPropKey('password', e.target.value))}
+                                    required
+                                />
+                            </Col>
+                        </FormGroup>
+                        <Button
+                            size="lg"
+                            type="submit"
+                            disabled={isInvalid}
+                            color="info"
+                            block>
+                            Log in
+                        </Button>
+                    </div>
                 </Form>
                 <p className="sign-in__errors">{ errors && <p>{errors.message}</p> }</p>
             </div>

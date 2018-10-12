@@ -8,4 +8,4 @@ const mapDispatchToProps = dispatch => ({
     }
 });
 
-export const UserSignIn = connect(() => ({}), mapDispatchToProps)(UserSignInComponent);
+export const UserSignIn = connect((state) => ({users: state.users}), mapDispatchToProps)(UserSignInComponent);
