@@ -52,6 +52,7 @@ const setupSocket = (dispatch, id) => {
         socket.send(JSON.stringify({
             type: types.USER_LOGGED_OFF,
             id: userId,
+            username: id,
             logOnTime: Date.now().toString()
         }));
     };

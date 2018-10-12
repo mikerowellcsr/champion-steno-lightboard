@@ -128,6 +128,13 @@ class SignInForm extends Component {
                                 />
                             </Col>
                         </FormGroup>
+                        {
+                            !errors
+                                ? ''
+                                :  <FormGroup row className="sign-in__errors_form-group">
+                                    <div className="sign-in__errors">{ <p>{errors.message}</p> }</div>
+                                </FormGroup>
+                        }
                         <Button
                             size="lg"
                             type="submit"
@@ -138,7 +145,6 @@ class SignInForm extends Component {
                         </Button>
                     </div>
                 </Form>
-                <p className="sign-in__errors">{ errors && <p>{errors.message}</p> }</p>
             </div>
         )
     }
