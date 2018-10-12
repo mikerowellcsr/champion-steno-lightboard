@@ -14,12 +14,9 @@ import {
 } from 'reactstrap';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faArrowRight, faCog
-} from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../assets/img/champion-steno-logo-300x206.png';
 import Navigation from '../Navigation';
-import withAuthorization from "../withAuthorization";
 import connect from "react-redux/es/connect/connect";
 
 class UserSignIn extends React.Component {

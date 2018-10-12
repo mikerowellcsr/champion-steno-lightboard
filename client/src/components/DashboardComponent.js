@@ -80,7 +80,7 @@ class Dashboard extends React.Component {
                         <h1 className="speaker-deck__header">
                             Speaker Deck
                         </h1>
-                    <SpeakerDeck activeSpeaker={this.state.activeSpeaker} />
+                    <SpeakerDeck activeSpeaker={this.props.keyPress} />
                     <Row className="margin-top">
                         <Col sm={5} />
                         <Col sm={2}>

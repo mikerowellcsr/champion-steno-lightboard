@@ -192,7 +192,11 @@ input {
 }
 
 .sign-in__errors {
-    margin: 1em 0 1em 0;
+    padding: 0 15px 0 15px;
+}
+
+.sign-in__errors_form-group {
+    margin-bottom: 0;
 }
 
 .sign-in__logo {

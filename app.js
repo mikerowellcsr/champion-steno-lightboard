@@ -150,7 +150,7 @@ wss.on('connection', ws => {
         }
 
         broadcast({
-            type: 'USER_LOGGED_OFF',
+            type: 'LIST_USERS',
             users: users.listUsers()
         }, ws);
 
