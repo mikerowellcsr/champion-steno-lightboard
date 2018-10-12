@@ -12,8 +12,15 @@ import {
     Label,
     Row
 } from 'reactstrap';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faArrowRight, faCog
+} from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../assets/img/champion-steno-logo-300x206.png';
-import Navigation from "../Navigation";
+import Navigation from '../Navigation';
+import withAuthorization from "../withAuthorization";
+import connect from "react-redux/es/connect/connect";
 
 class UserSignIn extends React.Component {
     constructor(props) {
@@ -40,6 +47,8 @@ class UserSignIn extends React.Component {
     }
 
     render() {
+        library.add(faArrowRight);
+
         return(
             <div className="sign-in-box">
                 <DocumentTitle title="Champion Steno Sign-In"/>
@@ -76,6 +85,9 @@ class UserSignIn extends React.Component {
                                     </Col>
                                 </FormGroup>
                             </Form>
+                            <div className="margin-top">
+                                <DashboardLink authUser={this.props.authUser} />
+                            </div>
                         </Col>
                         <Col xs="6" sm="4" />
                     </Row>
@@ -85,6 +97,15 @@ class UserSignIn extends React.Component {
     };
 }
 
+const DashboardLink = ({ authUser }) =>
+    <div>
+        {authUser ? <a href="/dashboard"
+                        title="To Dashboard"
+                        className="user-sign-in--dashboard-link">
+            Go to Dashboard <FontAwesomeIcon icon="arrow-right" />
+        </a> : ''}
+    </div>;
+
 UserSignIn.propTypes = {
     dispatch: PropTypes.func.isRequired
 };
@@ -93,4 +114,8 @@ UserSignIn.contextTypes = {
     store: PropTypes.object
 };
 
-export default UserSignIn;
+const mapStateToProps = (state) => ({
+    authUser: state.sessionState.authUser,
+});
+
+export default connect(mapStateToProps)(UserSignIn);
