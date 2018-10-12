@@ -210,6 +210,18 @@ input {
     font-family: 'Europa-Regular', sans-serif;
 }
 
+.user-sign-in--dashboard-link {
+    font-size: 1.2em;
+    padding-left: 15px;
+    color: #355263;
+}
+
+.user-sign-in--dashboard-link:hover {
+
+    padding-left: 15px;
+    color: #517594
+}
+
 .table td, .table th {
     padding: .5em 0 .5em 0;
 }

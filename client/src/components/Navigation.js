@@ -19,10 +19,10 @@ import {
     NavLink
 } from 'reactstrap';
 import { auth } from '../firebase';
+import { connect } from 'react-redux';
 import SlidingPane from 'react-sliding-pane';
 import DocumentTitle from 'react-document-title';
 import ConfigSpeakerDeck from './elements/SpeakerDeck';
-import { connect } from 'react-redux';
 
 const Navigation = ({ authUser }) =>
     <div>

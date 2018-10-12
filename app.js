@@ -147,7 +147,6 @@ wss.on('connection', ws => {
 
         if (userId) {
             users.removeUser(userId);
-            // delete users.list[userId];
         }
 
         broadcast({
