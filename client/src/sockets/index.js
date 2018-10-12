@@ -1,11 +1,22 @@
 import * as types from '../constants/ActionTypes';
 import {userLoggedOn, populateUserList, keyPressReceived } from '../actions';
 import Uuid from 'uuid/v4';
-const HOST = process.env.REACT_APP_ENV === 'dev' ? 'ws://localhost:8000' : window.location.origin.replace(/^http/, 'ws');
+import ReconnectingWebSocket from 'reconnecting-websocket';
+const HOST = process.env.REACT_APP_ENV === 'dev'
+    ? 'ws://localhost:8000'
+    : window.location.origin.replace(/^http/, 'ws');
+
+const rwsOptions = {
+    maxReconnectionDelay: 5000,
+    minReconnectionDelay: 2000,
+    minUptime: 4000,
+    connectionTimeout: 3000,
+    maxRetries: Infinity
+};
 
 const setupSocket = (dispatch, id) => {
     let userId;
-    const socket = new WebSocket(HOST);
+    const socket = new ReconnectingWebSocket(HOST, [], rwsOptions);
 
     socket.onopen = () => {
         userId = Uuid();
