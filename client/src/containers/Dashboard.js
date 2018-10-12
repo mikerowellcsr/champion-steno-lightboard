@@ -9,7 +9,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const Dashboard = connect(state => ({
-    users: state.users
+    users: state.users,
+    keyPress: state.keyPress.key
 }), mapDispatchToProps)(DashboardComponent);
 
 export default Dashboard;
