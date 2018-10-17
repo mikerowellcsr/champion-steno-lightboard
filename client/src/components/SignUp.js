@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-    Link,
     withRouter
 } from 'react-router-dom';
 import { auth, db } from '../firebase';
@@ -15,13 +14,20 @@ import {
     Input,
     Row
 } from 'reactstrap';
+import DocumentTitle from "react-document-title";
+import Logo from '../assets/img/champion-steno-logo-300x206.png';
 
 const SignUpPage = ({ history }) =>
-    <div>
+    <div className="sign-in-box">
+        <DocumentTitle title="Admin Sign-Up"/>
         <Container>
             <Row>
                 <Col xs="3" />
                 <Col xs="auto">
+                    <img src={Logo} className='sign-in__logo' alt="Champion Steno Logo" />
+                    <h4>
+                        Lightboard Admin Sign-Up
+                    </h4>
                     <SignUpForm history={history} />
                 </Col>
                 <Col sm="3" />
@@ -66,7 +72,6 @@ const byPropKey = function(property, value) {
                 if (cleanedName.length === 2 && ex.test(value)) {
                     nameObj.first = cleanedName[0];
                     nameObj.last = cleanedName[1];
-                    console.log(nameObj);
                 }
             }
             return function () {
@@ -88,6 +93,7 @@ class SignUpForm extends Component {
     onSubmit = (event)  => {
          const {
              email,
+             name,
              passwordOne
          } = this.state;
 
@@ -95,10 +101,11 @@ class SignUpForm extends Component {
              history
          } = this.props;
 
-         auth.doCreateUserWithEmailAndPassword(email, passwordOne)
+         auth.doCreateUserWithEmailAndPassword(email, passwordOne, name)
              .then(authUser => {
                  db.doCreateUser(authUser.user.uid, email)
                      .then(() => {
+                         console.log(authUser);
                          this.setState({ ...INITIAL_STATE });
                          history.push(routes.DASHBOARD);
                      })
@@ -118,6 +125,7 @@ class SignUpForm extends Component {
             name,
             passwordOne,
             passwordTwo,
+            errors
         } = this.state;
 
         const isInvalid =
@@ -184,6 +192,13 @@ class SignUpForm extends Component {
                             } />
                     </Col>
                 </FormGroup>
+                {
+                    !errors
+                        ? ''
+                        :  <FormGroup row className="sign-in__errors_form-group">
+                            <div className="sign-in__errors">{ <p>{errors.message}</p> }</div>
+                        </FormGroup>
+                }
                 <Button
                     type="submit"
                     disabled={isInvalid}
@@ -196,15 +211,7 @@ class SignUpForm extends Component {
     }
 }
 
-const SignUpLink = () =>
-    <p>
-        Sign up for an account
-        {' '}
-        <Link to={routes.SIGN_UP}>Sign Up </Link>
-    </p>;
-
 export default withRouter(SignUpPage);
 export {
-    SignUpForm,
-    SignUpLink
+    SignUpForm
 }

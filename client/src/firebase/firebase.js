@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import 'firebase/storage';
 
 const prodConfig = {
     apiKey: "AIzaSyCSPKBqKWrXZNLUOaSGpKngQN-oLRvVa5Y",
@@ -20,19 +21,20 @@ const devConfig = {
     messagingSenderId: "977605475668"
 };
 
-const config = process.env.NODE_ENV === 'production'
-    ? prodConfig
-    : devConfig;
+const config = process.env.REACT_APP_ENV === 'dev'
+    ? devConfig
+    : prodConfig;
 
 if (!firebase.apps.length) {
     firebase.initializeApp(config);
-    console.log(config);
 }
 
 const auth = firebase.auth();
 const db = firebase.database();
+const storage = firebase.storage();
 
 export {
     auth,
-    db
+    db,
+    storage
 };

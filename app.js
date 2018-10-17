@@ -1,30 +1,52 @@
 const cors = require('cors');
 const cowsay = require('cowsay');
 const express = require('express');
-const fileUpload = require('express-fileupload');
 const http = require('http');
+const multer = require('multer');
 const path = require('path');
+const storage = require('multer').diskStorage({
+    destination: 'client/build/static/uploads',
+    filename: (req, file, cb) => {
+        // Convert the file to proper speaker name on upload.ß
+        cb(null, `speaker${req.query.speaker}.${file.originalname.split('.').pop()}`);
+    }
+});
 const WebSocket = require('ws').Server;
 
 const app = express();
 const httpServer = http.createServer(app);
+const upload = multer({storage: storage});
 let PORT = process.env.PORT || 8000;
-
-app.use(fileUpload());
-app.use(cors());
 
 // Create new WebSockets connection.
 const wss = new WebSocket({
     server: httpServer
 });
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
-
 const corsOptions = {
     origin: 'http://localhost:3000',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(cors());
+
+app.get('*', cors(corsOptions), (req, res) => {
+    res.sendFile(path.join(__dirname, '/client/build/index.html'));
+});
+
+app.post('/upload', upload.single('photo'), (req, res) => {
+    if (!req.files) {
+        return res.send('No file was uploaded.');
+    } else {
+         return res.send('File was successfully uploaded!');
+    }
+});
+
+app.delete('/upload', (req, res) => {
+
+})
 
 // Serve our base route that returns a Hello World cow
 app.get('/api/cow/', cors(), async (req, res, next) => {
@@ -36,30 +58,7 @@ app.get('/api/cow/', cors(), async (req, res, next) => {
     }
 });
 
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/client/build/index.html'));
-});
 
-app.post('/upload', cors(corsOptions), function(req, res) {
-    if (!req.files) {
-        return res.status(400).send('No files were uploaded.');
-    }
-    // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-    let speakerPhoto = req.files.speakerPhoto0;
-    console.log(req.files);
-    // console.log(req.files.speakerPhoto.name.split('.')[1]);
-
-    // Use the mv() method to place the file somewhere on your server
-    speakerPhoto.mv('../public/uploads/speakerPhoto0.jpg', function(err) {
-        if (err) {
-            return res.status(500).send(err);
-        }
-
-        res.send('File uploaded!');
-    });
-});
 
 const users = {
     list: [],

@@ -12,6 +12,8 @@ function userReducer(state = INITIAL_STATE, action) {
         case 'USERS_SET' : {
             return applySetUsers(state, action);
         }
+        case 'FETCH_SPEAKER_PHOTOS':
+            return action.payload;
         default : return state;
     }
 }

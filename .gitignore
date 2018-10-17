@@ -11,6 +11,7 @@
 /build
 .idea
 .eslintrc.*
+addphoto.psd
 
 # misc
 appcopy.js
