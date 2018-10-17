@@ -29,7 +29,7 @@ const Navigation = ({ authUser }) =>
         {
             authUser
             ? <NavigationAuth
-                    user={authUser.email} />
+                    user={authUser.displayName} />
             : <NavigationNonAuth/>
         }
     </div>;

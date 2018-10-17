@@ -10,7 +10,7 @@ import Navigation from './Navigation';
 import { UserList } from '../containers/UserList';
 import setupSocket from '../sockets';
 import PropTypes from 'prop-types';
-import SpeakerDeck from './elements/SpeakerDeck';
+import SpeakerDeckNoAuth from './elements/SpeakerDeckNoAuth';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -40,7 +40,7 @@ class Dashboard extends React.Component {
 
     componentDidMount() {
         const { store } = this.context;
-        setupSocket(store.dispatch, this.props.authUser.providerData[0].uid, '000');
+        setupSocket(store.dispatch, `${this.props.authUser.displayName} (Admin)`);
     }
 
     render() {
@@ -80,7 +80,7 @@ class Dashboard extends React.Component {
                         <h1 className="speaker-deck__header">
                             Speaker Deck
                         </h1>
-                    <SpeakerDeck activeSpeaker={this.props.keyPress} />
+                    <SpeakerDeckNoAuth activeSpeaker={this.props.keyPress} />
                     <Row className="margin-top">
                         <Col sm={5} />
                         <Col sm={2}>
