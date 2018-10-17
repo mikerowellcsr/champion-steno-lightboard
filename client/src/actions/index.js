@@ -1,5 +1,10 @@
 import * as types from '../constants/ActionTypes';
 
+export const fetchSpeakerPhotos = photos => ({
+    type: types.FETCH_SPEAKER_PHOTOS,
+    photos
+});
+
 export const userLoggedOn = id => ({
     type: types.USER_LOGGED_ON,
     id: id,

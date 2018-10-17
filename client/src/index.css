@@ -53,6 +53,7 @@
 @media (min-width: 576px) {
     .card-deck .card {
         margin-left: 0;
+        padding: 1em;
     }
 
      .card-deck {

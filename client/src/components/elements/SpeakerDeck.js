@@ -48,8 +48,9 @@ class SpeakerDeck extends React.Component {
                              <CardTitle>Defense</CardTitle>
                              <UncontrolledCollapse toggler="#speaker0">
                                 <FilePond
-                                    server="http://localhost:8000/upload"
-                                    name="speakerPhoto0"
+                                    server="http://localhost:8000/upload?speaker=0"
+                                    name="photo"
+                                    enctype="multipart/form-data"
                                 />
                              </UncontrolledCollapse>
                          </CardBody>
@@ -64,9 +65,9 @@ class SpeakerDeck extends React.Component {
                              <CardTitle>Witness</CardTitle>
                              <UncontrolledCollapse toggler="#speaker1">
                                  <FilePond
-                                     server="http://localhost:8000/upload"
-                                     name="speakerPhoto1"
-                                     accepted-file-types="image/jpeg, image/png"
+                                     server="http://localhost:8000/upload?speaker=1"
+                                     name="photo"
+                                     enctype="multipart/form-data"
                                  />
                              </UncontrolledCollapse>
                          </CardBody>
@@ -81,7 +82,7 @@ class SpeakerDeck extends React.Component {
                              <CardTitle>The Court</CardTitle>
                              <UncontrolledCollapse toggler="#speaker2">
                                  <FilePond
-                                     server="http://localhost:8000/upload"
+                                     server="http://localhost:8000/upload?speaker=2"
                                      name="speakerPhoto2"
                                      accepted-file-types="image/jpeg, image/png"
                                  />
@@ -98,7 +99,7 @@ class SpeakerDeck extends React.Component {
                              <CardTitle>Plaintiff</CardTitle>
                              <UncontrolledCollapse toggler="#speaker3">
                                  <FilePond
-                                     server="http://localhost:8000/upload"
+                                     server="http://localhost:8000/upload?speaker=3"
                                      name="speakerPhoto3"
                                      accepted-file-types="image/jpeg, image/png"
                                  />
@@ -115,7 +116,7 @@ class SpeakerDeck extends React.Component {
                              <CardTitle>Defense 2</CardTitle>
                              <UncontrolledCollapse toggler="#speaker4">
                                  <FilePond
-                                     server="http://localhost:8000/upload"
+                                     server="http://localhost:8000/upload?speaker=4"
                                      name="speakerPhoto4"
                                      accepted-file-types="image/jpeg, image/png"
                                  />
