@@ -90,24 +90,30 @@ class SignUpForm extends Component {
         this.state = { ...INITIAL_STATE };
     }
 
+
     onSubmit = (event)  => {
-         const {
+        const {
+            history
+        } = this.props;
+
+        const {
              email,
              name,
              passwordOne
-         } = this.state;
+        } = this.state;
 
-         const {
-             history
-         } = this.props;
-
-         auth.doCreateUserWithEmailAndPassword(email, passwordOne, name)
+        auth.doCreateUserWithEmailAndPassword(email, passwordOne, name)
              .then(authUser => {
                  db.doCreateUser(authUser.user.uid, email)
                      .then(() => {
-                         console.log(authUser);
+                         auth.assignNameToUser(name);
                          this.setState({ ...INITIAL_STATE });
-                         history.push(routes.DASHBOARD);
+                         history.push({
+                             pathname: routes.DASHBOARD,
+                             state: {
+                                 user: `${name.first} ${name.last}`
+                             }
+                        });
                      })
                      .catch(error => {
                          this.setState(byPropKey('errors', error));
