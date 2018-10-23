@@ -1,7 +1,10 @@
 export const FETCH_SPEAKER_PHOTOS = 'FETCH_SPEAKER_PHOTOS';
+export const GET_USER = 'GET_USER';
 export const KEYPRESS_RECEIVED = 'KEYPRESS_RECEIVED';
 export const LIST_USERS = 'LIST_USERS';
 export const REGISTER_NEW_USER = 'REGISTER_NEW_USER';
 export const SEND_KEY_PRESS = 'SEND_KEY_PRESS';
 export const USER_LOGGED_ON = 'USER_LOGGED_ON';
 export const USER_LOGGED_OFF = 'USER_LOGGED_OFF';
+export const USERS_SET = 'USERS_SET';
+export const USER_SET_PREF = 'USER_SET_PREF';

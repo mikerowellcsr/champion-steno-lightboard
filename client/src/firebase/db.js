@@ -9,3 +9,9 @@ export const doCreateUser = (id, email) =>
 
 export const onceGetUsers = () =>
     db.ref('users').once('value');
+
+export const setPref = (uid, state) => {
+   return db.ref(`users/${uid}`).set({
+       state
+   });
+};
