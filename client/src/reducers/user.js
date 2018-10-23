@@ -1,3 +1,5 @@
+import * as types from '../constants/ActionTypes';
+
 const INITIAL_STATE = {
     users: {},
 };
@@ -7,14 +9,21 @@ const applySetUsers = (state, action) => ({
     users: action.users
 });
 
+const applySetPref = (state, action) => ({
+    ...state,
+    payload: action.payload
+});
+
 function userReducer(state = INITIAL_STATE, action) {
     switch(action.type) {
-        case 'USERS_SET' : {
+        case types.USERS_SET: {
             return applySetUsers(state, action);
         }
-        case 'FETCH_SPEAKER_PHOTOS':
-            return action.payload;
-        default : return state;
+        case types.USER_SET_PREF: {
+            return applySetPref(state, action);
+        }
+        default:
+            return state;
     }
 }
 

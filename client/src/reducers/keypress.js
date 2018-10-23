@@ -6,7 +6,7 @@ const keyPressReceived = (state = [], action) => {
         case types.KEYPRESS_RECEIVED:
             return {
                 type: action.type,
-                 key: action.key
+                key: action.key
             };
         default:
             return state;
