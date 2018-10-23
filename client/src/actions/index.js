@@ -5,6 +5,11 @@ export const fetchSpeakerPhotos = photos => ({
     photos
 });
 
+export const getUser = user => ({
+    type: types.GET_USER,
+    user
+});
+
 export const userLoggedOn = id => ({
     type: types.USER_LOGGED_ON,
     id: id,
