@@ -104,7 +104,7 @@ class SignUpForm extends Component {
 
         auth.doCreateUserWithEmailAndPassword(email, passwordOne, name)
              .then(authUser => {
-                 db.doCreateUser(authUser.user.uid, email)
+                 db.doCreateUser(authUser.user.uid, email, name.first, name.last)
                      .then(() => {
                          auth.assignNameToUser(name);
                          this.setState({ ...INITIAL_STATE });
