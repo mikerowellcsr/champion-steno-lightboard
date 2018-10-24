@@ -19,21 +19,16 @@ class HomePage extends Component {
         db.onceGetUsers().then(snapshot =>
             onSetUsers(snapshot.val())
         );
-    }
 
-    handleSetPref(uid, pref) {
-        db.setPref(uid, pref).then(snapshot => {
-            this.userSetPref(snapshot.val());
-        });
+        db.fetchUserSettings(this.props.authUser.uid);
     }
 
     render() {
-        const { authUser, users } = this.props;
+        const { authUser, users, setting } = this.props;
 
-        const setPref = (e) => {
+        const handleSetUserSettings = (e) => {
             e.preventDefault();
-            console.log(authUser.uid);
-            this.handleSetPref(authUser.uid, 'hi');
+            db.setUserSettings(authUser.uid, {whatup: `yo`});
         };
 
         return (
@@ -43,7 +38,7 @@ class HomePage extends Component {
                 {
                     !!users && <UserList users={users} authUser={authUser} />
                 }
-                <form onSubmit={setPref}>
+                <form onSubmit={handleSetUserSettings}>
                     <button>hello</button>
                 </form>
                 {!!authUser && <div>{authUser.displayName}</div>}
@@ -52,7 +47,7 @@ class HomePage extends Component {
     }
 }
 
-const UserList = ({ authUser, users }) =>
+const UserList = ({ authUser, users, userState }) =>
     <div>
         <h2>List of Usernames</h2>
         <p>(Saved on sign-up in Firebase.)</p>
@@ -61,24 +56,25 @@ const UserList = ({ authUser, users }) =>
                 <div key={key}>{users[key].email}</div>
             )
         }
-        {/*{!!authUser && <div>{users[authUser.uid]}</div>}*/}
+        {!!userState && userState.map(thing => {
+            <div key={thing.key}>{thing.key}{thing.value}</div>
+        })}
     </div>;
 
 const mapStateToProps = (state) => ({
     authUser: state.sessionState.authUser,
-    users: state.userState.users
+    users: state.userState.users,
+    userState: state.userState
 });
 
-const mapDispatchToProps = dispatch => ({
-    onSetUsers: (users) => dispatch({
-        type: 'USERS_SET',
-        users
-    }),
-    userSetPref: (pref) => dispatch({
-        type: 'USER_SET_PREF',
-        pref
-    })
-});
+const mapDispatchToProps = dispatch => {
+    return {
+        onSetUsers: users => dispatch({
+            type: 'USERS_SET',
+            users
+        })
+    }
+};
 
 const authCondition = (authUser) => !!authUser;
 
