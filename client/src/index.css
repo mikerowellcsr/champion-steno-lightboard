@@ -101,6 +101,22 @@ input {
     padding-bottom: .7em;
 }
 
+.configure-pane {
+    margin: 3.5em;
+}
+
+.configure-pane h3 {
+    margin-bottom: 2em;
+}
+
+.configure-pane > .table-responsive thead th {
+    font-size: 1.2em;
+}
+
+.configure-pane > .table-responsive td {
+    padding: 0 1em 1em 0;
+}
+
  .form-control:focus {
      border-color: #DBE0DF;
      -webkit-box-shadow: unset;
@@ -204,6 +220,10 @@ input {
     margin: 4em 2em 1.5em 2em;
 }
 
+.slide-pane_from_bottom {
+    background-color: #fff;
+}
+
 .speaker-deck__header {
     margin: 2.5em 0 1em 0;
 }
@@ -232,7 +252,6 @@ input {
 }
 
 .text-input {
-    /*border: 1px solid #DBE0DF;*/
     font-family: 'Europa-Regular', sans-serif;
     height: 3.2em;
 }
