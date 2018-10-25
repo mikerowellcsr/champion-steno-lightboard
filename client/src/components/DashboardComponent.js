@@ -23,6 +23,8 @@ class Dashboard extends React.Component {
 
         this.state = {
             activeSpeaker: 0,
+
+            // TO-DO: make these keys configurable.
             keys: ['q', 'w', 'e', 'r', 't'],
             inputValid: true
         };

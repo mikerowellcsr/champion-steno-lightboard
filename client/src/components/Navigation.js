@@ -22,7 +22,7 @@ import { auth } from '../firebase';
 import { connect } from 'react-redux';
 import SlidingPane from 'react-sliding-pane';
 import DocumentTitle from 'react-document-title';
-import ConfigSpeakerDeck from './elements/SpeakerDeck';
+import ConfigSpeakerDeck from './elements/SpeakerDeckConfigComponent';
 
 const Navigation = ({ authUser }) =>
     <div>
@@ -40,7 +40,7 @@ class NavigationAuth extends Component {
 
         this.state = {
             isPaneOpen: false,
-            isPaneOpenLeft: false,
+             isPaneOpenBottom: false,
             isOpen: false
         };
 
@@ -50,13 +50,13 @@ class NavigationAuth extends Component {
 
     toggle() {
         this.setState({
-            isPaneOpenLeft: !this.state.isPaneOpenLeft
+             isPaneOpenBottom: !this.state. isPaneOpenBottom
         });
     }
 
     toggleLeftPane() {
         this.setState({
-            isPaneOpenLeft: true
+             isPaneOpenBottom: true
         });
     }
 
@@ -70,7 +70,9 @@ class NavigationAuth extends Component {
         library.add(faSignOutAlt);
 
         return <div>
-            <Navbar light fixed="top" expand="md">
+            <Navbar light
+                    fixed="top"
+                    expand="md">
                 <NavbarBrand href="/dashboard">Champion Steno Lightboard</NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
@@ -82,9 +84,16 @@ class NavigationAuth extends Component {
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="#" onClick={ () => this.setState({ isPaneOpenLeft: true }) }>
+                            <NavLink href="#"
+                                     onClick={() =>
+                                         this.setState(
+                                             prevState => ({
+                                                 isPaneOpenBottom: !prevState.isPaneOpenBottom
+                                             })
+                                         )
+                                     }>
                                 <FontAwesomeIcon icon="cog" />
-                                &nbsp;&nbsp;Configure
+                                &nbsp;&nbsp;Configure Deck
                             </NavLink>
                         </NavItem>
                         <NavItem>
@@ -102,12 +111,12 @@ class NavigationAuth extends Component {
                 <DocumentTitle title="Champion Steno Lightboard" />
                 <div ref={ref => this.el = ref}>
                     <SlidingPane
-                        isOpen={ this.state.isPaneOpenLeft }
-                        title="Preferences"
-                        from="left"
-                        width="80%"
-                        onRequestClose={ () => this.setState({ isPaneOpenLeft: false }) }>
-                        <h2>Speaker Deck</h2>
+                        isOpen={ this.state. isPaneOpenBottom }
+                        title="Configure Speaker Deck"
+                        from="bottom"
+                        width="100%"
+                        height="14%"
+                        onRequestClose={() => this.setState({  isPaneOpenBottom: false })}>
                         <ConfigSpeakerDeck />
                     </SlidingPane>
                 </div>
