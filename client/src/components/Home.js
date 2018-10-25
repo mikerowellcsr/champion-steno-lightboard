@@ -31,6 +31,8 @@ class HomePage extends Component {
             db.setUserSettings(authUser.uid, {whatup: `yo`});
         };
 
+        console.log(this.props.userObject);
+
         return (
             <div>
                 <h1>Home</h1>
@@ -64,7 +66,7 @@ const UserList = ({ authUser, users, userState }) =>
 const mapStateToProps = (state) => ({
     authUser: state.sessionState.authUser,
     users: state.userState.users,
-    userState: state.userState
+    userObject: !!state.userState.users[state.sessionState.authUser.uid] && state.userState.users[state.sessionState.authUser.uid].settings
 });
 
 const mapDispatchToProps = dispatch => {
