@@ -105,7 +105,7 @@ input {
     margin: 3.5em;
 }
 
-.configure-pane h3 {
+.configure-pane h2 {
     margin-bottom: 2em;
 }
 
@@ -222,6 +222,18 @@ input {
 
 .slide-pane_from_bottom {
     background-color: #fff;
+}
+
+.slide-pane__close {
+    transform: rotate(270deg)
+}
+
+.slide-pane__overlay.ReactModal__Overlay--after-open {
+    z-index: 9999;
+}
+
+.slide-pane .slide-pane__title {
+    font-size: 1.1em;
 }
 
 .speaker-deck__header {
