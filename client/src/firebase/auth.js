@@ -1,3 +1,5 @@
+// Authentication API
+
 import { auth } from './firebase';
 
 // Sign-up

@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Modal from 'react-modal';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
     faCog,
     faHome,
@@ -22,15 +22,16 @@ import { auth } from '../firebase';
 import { connect } from 'react-redux';
 import SlidingPane from 'react-sliding-pane';
 import DocumentTitle from 'react-document-title';
-import ConfigSpeakerDeck from './elements/SpeakerDeckConfigComponent';
+import SpeakerDeckConfig from '../containers/SpeakerDeckConfig';
 
 const Navigation = ({ authUser }) =>
     <div>
         {
             authUser
-            ? <NavigationAuth
-                    user={authUser.displayName} />
-            : <NavigationNonAuth/>
+                ? <NavigationAuth
+                    user={authUser.displayName}
+                    authUser={authUser}/>
+                : <NavigationNonAuth/>
         }
     </div>;
 
@@ -40,7 +41,7 @@ class NavigationAuth extends Component {
 
         this.state = {
             isPaneOpen: false,
-             isPaneOpenBottom: false,
+            isPaneOpenBottom: false,
             isOpen: false
         };
 
@@ -50,13 +51,13 @@ class NavigationAuth extends Component {
 
     toggle() {
         this.setState({
-             isPaneOpenBottom: !this.state. isPaneOpenBottom
+            isPaneOpenBottom: !this.state.isPaneOpenBottom
         });
     }
 
     toggleLeftPane() {
         this.setState({
-             isPaneOpenBottom: true
+            isPaneOpenBottom: true
         });
     }
 
@@ -74,12 +75,12 @@ class NavigationAuth extends Component {
                     fixed="top"
                     expand="md">
                 <NavbarBrand href="/dashboard">Champion Steno Lightboard</NavbarBrand>
-                <NavbarToggler onClick={this.toggle} />
+                <NavbarToggler onClick={this.toggle}/>
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
                             <NavLink href="/account">
-                                <FontAwesomeIcon icon="user" />
+                                <FontAwesomeIcon icon="user"/>
                                 &nbsp;&nbsp;{this.props.user}
                             </NavLink>
                         </NavItem>
@@ -92,7 +93,7 @@ class NavigationAuth extends Component {
                                              })
                                          )
                                      }>
-                                <FontAwesomeIcon icon="cog" />
+                                <FontAwesomeIcon icon="cog"/>
                                 &nbsp;&nbsp;Configure Deck
                             </NavLink>
                         </NavItem>
@@ -100,7 +101,7 @@ class NavigationAuth extends Component {
                             <NavLink
                                 href="#"
                                 onClick={auth.doSignOut}>
-                                <FontAwesomeIcon icon="sign-out-alt" />
+                                <FontAwesomeIcon icon="sign-out-alt"/>
                                 &nbsp;&nbsp;Sign Out
                             </NavLink>
                         </NavItem>
@@ -108,16 +109,16 @@ class NavigationAuth extends Component {
                 </Collapse>
             </Navbar>
             <Container>
-                <DocumentTitle title="Champion Steno Lightboard" />
+                <DocumentTitle title="Champion Steno Lightboard"/>
                 <div ref={ref => this.el = ref}>
                     <SlidingPane
-                        isOpen={ this.state. isPaneOpenBottom }
+                        className="sliding-pane"
+                        isOpen={this.state.isPaneOpenBottom}
                         title="Configure Speaker Deck"
                         from="bottom"
                         width="100%"
-                        height="14%"
-                        onRequestClose={() => this.setState({  isPaneOpenBottom: false })}>
-                        <ConfigSpeakerDeck />
+                        onRequestClose={() => this.setState({isPaneOpenBottom: false})}>
+                        <SpeakerDeckConfig />
                     </SlidingPane>
                 </div>
             </Container>
@@ -125,48 +126,48 @@ class NavigationAuth extends Component {
     }
 }
 
- class NavigationNonAuth extends React.Component {
-     constructor(props) {
-         super(props);
+class NavigationNonAuth extends React.Component {
+    constructor(props) {
+        super(props);
 
-         this.state = {
-             isOpen: false
-         };
-     }
+        this.state = {
+            isOpen: false
+        };
+    }
 
-     render() {
-         library.add(faHome);
-         library.add(faUser);
+    render() {
+        library.add(faHome);
+        library.add(faUser);
 
-         return(
-             <div>
-                 <Navbar light fixed="top" expand="md">
-                     <NavbarBrand href="/">Champion Steno Lightboard</NavbarBrand>
-                     <NavbarToggler onClick={this.toggle} />
-                     <Collapse isOpen={this.state.isOpen} navbar>
-                         <Nav className="ml-auto" navbar>
-                             <NavItem>
-                                 <NavLink href="https://www.championsteno.com/">
-                                     <FontAwesomeIcon icon="home" />
-                                     &nbsp;&nbsp;Home Page
-                                 </NavLink>
-                             </NavItem>
-                             <NavItem>
-                                 <NavLink href="/signin">
-                                     <FontAwesomeIcon icon="user" />
-                                     &nbsp;&nbsp;Admin Sign-In
-                                 </NavLink>
-                             </NavItem>
-                         </Nav>
-                     </Collapse>
-                 </Navbar>
-             </div>
+        return (
+            <div>
+                <Navbar light fixed="top" expand="md">
+                    <NavbarBrand href="/">Champion Steno Lightboard</NavbarBrand>
+                    <NavbarToggler onClick={this.toggle}/>
+                    <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink href="https://www.championsteno.com/">
+                                    <FontAwesomeIcon icon="home"/>
+                                    &nbsp;&nbsp;Home Page
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/signin">
+                                    <FontAwesomeIcon icon="user"/>
+                                    &nbsp;&nbsp;Admin Sign-In
+                                </NavLink>
+                            </NavItem>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
+            </div>
         );
-     }
- }
+    }
+}
 
 const mapStateToProps = (state) => ({
-    authUser: state.sessionState.authUser,
+    authUser: state.sessionState.authUser
 });
 
 export default connect(mapStateToProps)(Navigation);
