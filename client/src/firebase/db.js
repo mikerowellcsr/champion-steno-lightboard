@@ -24,5 +24,5 @@ export const setUserSettings = (id, data) =>
     db.ref(`users/${id}`).child(`settings`).update(data);
 
 
-export const removeUserSettings = (id, setting) => async dispatch =>
-    db.ref(`users/${id}`).child('settings').child(setting).remove();
+// export const removeUserSettings = (id, setting) => async dispatch =>
+//     db.ref(`users/${id}`).child('settings').child(setting).remove();

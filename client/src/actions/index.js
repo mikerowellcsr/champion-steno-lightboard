@@ -20,3 +20,8 @@ export const sendKeyPress = key => ({
     type: types.SEND_KEY_PRESS,
     key
 });
+
+export const fetchSpeakerPhotos = photos => ({
+    type: types.FETCH_SPEAKER_PHOTOS,
+    photos
+});
