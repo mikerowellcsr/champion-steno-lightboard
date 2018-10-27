@@ -166,7 +166,7 @@ class NavigationNonAuth extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
     authUser: state.sessionState.authUser
 });
 

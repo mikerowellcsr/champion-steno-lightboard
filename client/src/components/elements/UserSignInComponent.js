@@ -17,7 +17,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../assets/img/champion-steno-logo-300x206.png';
 import Navigation from '../Navigation';
-import connect from "react-redux/es/connect/connect";
+import connect from 'react-redux/es/connect/connect';
 
 class UserSignIn extends React.Component {
     constructor(props) {
@@ -32,9 +32,9 @@ class UserSignIn extends React.Component {
     }
 
     handleChange(event) {
-         this.setState({
-             username: event.target.value
-         });
+        this.setState({
+            username: event.target.value
+        });
     }
 
     handleSubmit(event) {
@@ -46,20 +46,20 @@ class UserSignIn extends React.Component {
     render() {
         library.add(faArrowRight);
 
-        return(
+        return (
             <div className="sign-in-box">
-                <DocumentTitle title="Champion Steno Sign-In"/>
+                <DocumentTitle title="Champion Steno Sign-In" />
                 <Navigation />
                 <div className="padding-top" />
                 <Container>
                     <Row>
                         <Col xs="6" sm="4" />
                         <Col xs="6" sm="4">
-                            <img src={Logo} className='sign-in__logo' alt="Champion Steno Logo" />
-                            <Form onSubmit={this.handleSubmit}>
+                            <img src={ Logo } className='sign-in__logo' alt="Champion Steno Logo" />
+                            <Form onSubmit={ this.handleSubmit }>
                                 <FormGroup>
-                                    <Label for="name" size="lg" sm={2}>Name</Label>
-                                    <Col sm={10} className='text-input'>
+                                    <Label for="name" size="lg" sm={ 2 }>Name</Label>
+                                    <Col sm={ 10 } className='text-input'>
                                         <Input
                                             autoFocus
                                             className="margin-bottom__thin"
@@ -68,22 +68,22 @@ class UserSignIn extends React.Component {
                                             name="name"
                                             id="name"
                                             placeholder="Type in your name."
-                                            onChange={this.handleChange}
+                                            onChange={ this.handleChange }
                                         />
                                     </Col>
                                 </FormGroup>
                                 <FormGroup>
-                                    <Col sm={10}>
+                                    <Col sm={ 10 }>
                                         <Button
                                             size="lg"
                                             type="submit"
                                             color="info"
-                                            disabled={!this.state.username}>Join Session</Button>
+                                            disabled={ !this.state.username }>Join Session</Button>
                                     </Col>
                                 </FormGroup>
                             </Form>
                             <div className="margin-top">
-                                <DashboardLink authUser={this.props.authUser} />
+                                <DashboardLink authUser={ this.props.authUser } />
                             </div>
                         </Col>
                         <Col xs="6" sm="4" />
@@ -96,11 +96,11 @@ class UserSignIn extends React.Component {
 
 const DashboardLink = ({ authUser }) =>
     <div>
-        {authUser ? <a href="/dashboard"
+        { authUser ? <a href="/dashboard"
                         title="To Dashboard"
                         className="user-sign-in--dashboard-link">
             Go to Dashboard <FontAwesomeIcon icon="arrow-right" />
-        </a> : ''}
+        </a> : '' }
     </div>;
 
 UserSignIn.propTypes = {
@@ -112,7 +112,7 @@ UserSignIn.contextTypes = {
 };
 
 const mapStateToProps = (state) => ({
-    authUser: state.sessionState.authUser,
+    authUser: state.sessionState.authUser
 });
 
 export default connect(mapStateToProps)(UserSignIn);

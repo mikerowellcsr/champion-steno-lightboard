@@ -7,4 +7,3 @@ export const SEND_KEY_PRESS = 'SEND_KEY_PRESS';
 export const USER_LOGGED_ON = 'USER_LOGGED_ON';
 export const USER_LOGGED_OFF = 'USER_LOGGED_OFF';
 export const USERS_SET = 'USERS_SET';
-export const USER_SET_PREF = 'USER_SET_PREF';
