@@ -21,25 +21,23 @@ const methods = {
     componentDidMount
 };
 
-const LightboxComponent = ({ keyPress, photos, users }) => {
-    return (
-        <div>
-            { users && users.length === 0
-                ? <UserSignIn />
-                : <div className="main-container__lightboard">
-                    <DocumentTitle title="Champion Steno Lightboard" />
-                    <Navigation />
-                    <Row>
-                        <h1>
-                            Champion Steno Lightboard
-                        </h1>
-                    </Row>
-                    <SpeakerDeckNoAuth
-                        activeSpeaker={ keyPress }
-                        photos={ photos } />
-                </div> }
-        </div>
-    );
-};
+const LightboxComponent = ({ keyPress, photos, users }) =>
+    <div>
+        { users && users.length === 0
+            ? <UserSignIn />
+            : <div className="main-container__lightboard">
+                <DocumentTitle title="Champion Steno Lightboard" />
+                <Navigation />
+                <Row>
+                    <h1>
+                        Champion Steno Lightboard
+                    </h1>
+                </Row>
+                <SpeakerDeckNoAuth
+                    activeSpeaker={ keyPress }
+                    photos={ photos } />
+            </div> }
+    </div>;
+
 
 export default lifecycle(methods)(LightboxComponent);
