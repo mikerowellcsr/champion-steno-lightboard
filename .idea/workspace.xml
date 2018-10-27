@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c741d92d-091a-4022-8f15-0028336f08da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/components/elements/LightboxComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/elements/LightboxComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -463,12 +463,12 @@
       <workItem from="1540247247925" duration="100000" />
       <workItem from="1540253736583" duration="5678000" />
       <workItem from="1540330433304" duration="45242000" />
-      <workItem from="1540567656070" duration="38571000" />
+      <workItem from="1540567656070" duration="38725000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="332368000" />
+    <option name="totallyTimeSpent" value="332522000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
