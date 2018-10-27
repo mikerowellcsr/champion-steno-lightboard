@@ -46,18 +46,11 @@ class NavigationAuth extends Component {
         };
 
         this.toggle = this.toggle.bind(this);
-        this.toggleLeftPane = this.toggleLeftPane.bind(this);
     }
 
     toggle() {
         this.setState({
-            isPaneOpenBottom: !this.state.isPaneOpenBottom
-        });
-    }
-
-    toggleLeftPane() {
-        this.setState({
-            isPaneOpenBottom: true
+            isOpen: !this.state.isOpen
         });
     }
 
@@ -74,14 +67,15 @@ class NavigationAuth extends Component {
             <Navbar light
                     fixed="top"
                     expand="md">
-                <NavbarBrand href="/dashboard">Champion Steno Lightboard</NavbarBrand>
+                <NavbarBrand href="/dashboard" className="navbar-badge__text--expanded">Champion Steno Lightboard</NavbarBrand>
+                <NavbarBrand href="/dashboard" className="navbar-badge__text--collapsed">Lightboard</NavbarBrand>
                 <NavbarToggler onClick={ this.toggle } />
                 <Collapse isOpen={ this.state.isOpen } navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
                             <NavLink href="/account">
                                 <FontAwesomeIcon icon="user" />
-                                &nbsp;&nbsp;{ this.props.user }
+                                <span className="nav-link__text">&nbsp;&nbsp;{ this.props.user }</span>
                             </NavLink>
                         </NavItem>
                         <NavItem>
@@ -94,7 +88,7 @@ class NavigationAuth extends Component {
                                          )
                                      }>
                                 <FontAwesomeIcon icon="cog" />
-                                &nbsp;&nbsp;Configure Deck
+                                <span className="nav-link__text">&nbsp;&nbsp;Configure Deck</span>
                             </NavLink>
                         </NavItem>
                         <NavItem>
@@ -102,7 +96,7 @@ class NavigationAuth extends Component {
                                 href="#"
                                 onClick={ auth.doSignOut }>
                                 <FontAwesomeIcon icon="sign-out-alt" />
-                                &nbsp;&nbsp;Sign Out
+                                <span className="nav-link__text">&nbsp;&nbsp;Sign Out</span>
                             </NavLink>
                         </NavItem>
                     </Nav>
@@ -142,7 +136,8 @@ class NavigationNonAuth extends React.Component {
         return (
             <div>
                 <Navbar light fixed="top" expand="md">
-                    <NavbarBrand href="/">Champion Steno Lightboard</NavbarBrand>
+                    <NavbarBrand href="/" className="navbar-badge__text--expanded">Champion Steno Lightboard</NavbarBrand>
+                    <NavbarBrand href="/" className="navbar-badge__text--collapsed">Lightboard</NavbarBrand>
                     <NavbarToggler onClick={ this.toggle } />
                     <Collapse isOpen={ this.state.isOpen } navbar>
                         <Nav className="ml-auto" navbar>
