@@ -240,6 +240,24 @@ input {
     margin: 2.5em 0 1em 0;
 }
 
+.speaker-photo {
+    width: 300px;
+    height: 300px;
+    background-color:#CCCCCC;
+    margin:10px;
+    display:inline-block;
+    float:left;
+    position:relative;
+}
+
+.speaker-photo img {
+    max-width: 100%;
+    max-height:100%;
+    display: inline-block; /* Instead of display: block; */
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
 .user-list__active-users {
     margin: 1.4em 0 0 0;
 }
