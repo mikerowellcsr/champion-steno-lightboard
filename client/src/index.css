@@ -31,18 +31,6 @@
     font-style: normal;
 }
 
-@media (min-width: 576px) {
-    .card-deck .card {
-        margin-left: 0;
-        padding: 1em;
-    }
-
-    .card-deck {
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-
 body, html {
     background-color: #FEFEFE;
     margin: 0;
@@ -199,6 +187,10 @@ input {
     border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
+.navbar-badge__text--collapsed {
+    display: none;
+}
+
 .navbar-light .navbar-brand {
     background-color: #00b9ff;
     color: #fff;
@@ -321,3 +313,88 @@ text-input:focus {
 .text-input::-ms-input-placeholder { /* Microsoft Edge */
     color: #DBE0DF;
 }
+
+@media (min-width: 576px) {
+    .card-deck .card {
+        padding: 1em;
+        margin: 0 1em 1em 1em;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .card-deck {
+        flex-direction: column;
+        margin: 0 0 1em 0;
+    }
+
+    .card-body {
+        padding: 1em 0 1em .3em;
+    }
+
+    .main-container {
+        margin: 0 1em 0 1em;
+    }
+
+    .ml-auto, .mx-auto {
+        margin-left: 1em;
+    }
+
+    .navbar {
+        padding: 0 .5em 0 .5em;
+    }
+
+    .navbar-collapse {
+        padding: .9em;
+    }
+
+    .navbar-light {
+        background-color: #00b9ff;
+    }
+
+    .navbar-expand-md .navbar-nav .nav-link {
+        padding: .7em 1em .7em 1em;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: #FEFEFE
+    }
+
+    .navbar-light .navbar-toggler {
+        border-color: transparent;
+        padding: 1em;
+    }
+
+    .navbar-badge__text--expanded {
+        display: none;
+    }
+
+    .navbar-badge__text--collapsed {
+        display: inherit;
+    }
+
+    .speaker-deck__header {
+        font-size: 1.6em;
+        margin: 2em 0 1em 0
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1100px) {
+    .card-body {
+        padding: 1em 0 0 .3em;
+    }
+
+    .main-container {
+        margin: 0 1em 0 1em;
+    }
+
+    .nav-link__text {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .card-deck {
+        flex-flow: column;
+    }
+}
+

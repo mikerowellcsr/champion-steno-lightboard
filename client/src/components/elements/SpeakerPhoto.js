@@ -16,7 +16,7 @@ const SpeakerPhoto = ({ cardImg, speakerNumber, photos }) => {
 
     const imageUrl = findImageUrl(speakerNumber, photos)
         ? findImageUrl(speakerNumber, photos)
-        : '/images/speaker-placeholder.png';
+        : '/images/speaker-placeholder-small.png';
 
     return (
         cardImg
