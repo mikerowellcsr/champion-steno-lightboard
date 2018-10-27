@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Modal from 'react-modal';
-import {library} from '@fortawesome/fontawesome-svg-core';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCog,
     faHome,
@@ -29,9 +29,9 @@ const Navigation = ({ authUser }) =>
         {
             authUser
                 ? <NavigationAuth
-                    user={authUser.displayName}
-                    authUser={authUser}/>
-                : <NavigationNonAuth/>
+                    user={ authUser.displayName }
+                    authUser={ authUser } />
+                : <NavigationNonAuth />
         }
     </div>;
 
@@ -75,33 +75,33 @@ class NavigationAuth extends Component {
                     fixed="top"
                     expand="md">
                 <NavbarBrand href="/dashboard">Champion Steno Lightboard</NavbarBrand>
-                <NavbarToggler onClick={this.toggle}/>
-                <Collapse isOpen={this.state.isOpen} navbar>
+                <NavbarToggler onClick={ this.toggle } />
+                <Collapse isOpen={ this.state.isOpen } navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
                             <NavLink href="/account">
-                                <FontAwesomeIcon icon="user"/>
-                                &nbsp;&nbsp;{this.props.user}
+                                <FontAwesomeIcon icon="user" />
+                                &nbsp;&nbsp;{ this.props.user }
                             </NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="#"
-                                     onClick={() =>
+                                     onClick={ () =>
                                          this.setState(
                                              prevState => ({
                                                  isPaneOpenBottom: !prevState.isPaneOpenBottom
                                              })
                                          )
                                      }>
-                                <FontAwesomeIcon icon="cog"/>
+                                <FontAwesomeIcon icon="cog" />
                                 &nbsp;&nbsp;Configure Deck
                             </NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink
                                 href="#"
-                                onClick={auth.doSignOut}>
-                                <FontAwesomeIcon icon="sign-out-alt"/>
+                                onClick={ auth.doSignOut }>
+                                <FontAwesomeIcon icon="sign-out-alt" />
                                 &nbsp;&nbsp;Sign Out
                             </NavLink>
                         </NavItem>
@@ -109,15 +109,15 @@ class NavigationAuth extends Component {
                 </Collapse>
             </Navbar>
             <Container>
-                <DocumentTitle title="Champion Steno Lightboard"/>
-                <div ref={ref => this.el = ref}>
+                <DocumentTitle title="Champion Steno Lightboard" />
+                <div ref={ ref => this.el = ref }>
                     <SlidingPane
                         className="sliding-pane"
-                        isOpen={this.state.isPaneOpenBottom}
+                        isOpen={ this.state.isPaneOpenBottom }
                         title="Configure Speaker Deck"
                         from="bottom"
                         width="100%"
-                        onRequestClose={() => this.setState({isPaneOpenBottom: false})}>
+                        onRequestClose={ () => this.setState({ isPaneOpenBottom: false }) }>
                         <SpeakerDeckConfig />
                     </SlidingPane>
                 </div>
@@ -143,18 +143,18 @@ class NavigationNonAuth extends React.Component {
             <div>
                 <Navbar light fixed="top" expand="md">
                     <NavbarBrand href="/">Champion Steno Lightboard</NavbarBrand>
-                    <NavbarToggler onClick={this.toggle}/>
-                    <Collapse isOpen={this.state.isOpen} navbar>
+                    <NavbarToggler onClick={ this.toggle } />
+                    <Collapse isOpen={ this.state.isOpen } navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
                                 <NavLink href="https://www.championsteno.com/">
-                                    <FontAwesomeIcon icon="home"/>
+                                    <FontAwesomeIcon icon="home" />
                                     &nbsp;&nbsp;Home Page
                                 </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/signin">
-                                    <FontAwesomeIcon icon="user"/>
+                                    <FontAwesomeIcon icon="user" />
                                     &nbsp;&nbsp;Admin Sign-In
                                 </NavLink>
                             </NavItem>

@@ -2,20 +2,10 @@ const cors = require('cors');
 const cowsay = require('cowsay');
 const express = require('express');
 const http = require('http');
-const multer = require('multer');
 const path = require('path');
-const storage = require('multer').diskStorage({
-    destination: 'client/build/static/uploads',
-    filename: (req, file, cb) => {
-        // Convert the file to proper speaker name on upload.ß
-        cb(null, `speaker${req.query.speaker}.${file.originalname.split('.').pop()}`);
-    }
-});
 const WebSocket = require('ws').Server;
-
 const app = express();
 const httpServer = http.createServer(app);
-const upload = multer({storage: storage});
 let PORT = process.env.PORT || 8000;
 
 // Create new WebSockets connection.
@@ -32,33 +22,15 @@ const corsOptions = {
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(cors());
 
-app.get('*', cors(corsOptions), (req, res) => {
-    res.sendFile(path.join(__dirname, '/client/build/index.html'));
-});
-
-app.post('/upload', upload.single('photo'), (req, res) => {
-    if (!req.files) {
-        return res.send('No file was uploaded.');
-    } else {
-         return res.send('File was successfully uploaded!');
-    }
-});
-
-app.delete('/upload', (req, res) => {
-
-})
-
 // Serve our base route that returns a Hello World cow
-app.get('/api/cow/', cors(), async (req, res, next) => {
+app.get('/api/cow/', cors(corsOptions), async(req, res, next) => {
     try {
         const moo = cowsay.say({ text: 'Hello World!' });
-        res.json({ moo })
+        res.json({ moo });
     } catch (err) {
-        next(err)
+        next(err);
     }
 });
-
-
 
 const users = {
     list: [],
@@ -71,11 +43,11 @@ const users = {
     },
 
     removeUser: function(id) {
-         this.list.forEach((user, index) => {
+        this.list.forEach((user, index) => {
             if (user.id === id) {
                 this.list.splice(index, 1);
             }
-        })
+        });
     },
 
     checkIfUserExists: function(username) {
@@ -121,7 +93,7 @@ wss.on('connection', ws => {
                     users: users.listUsers()
                 }, ws);
 
-                console.log('\n users in ' +   JSON.stringify(users.listUsers()));
+                console.log('\n users in ' + JSON.stringify(users.listUsers()));
 
                 break;
             case 'USER_LOGGED_OFF':
@@ -132,7 +104,7 @@ wss.on('connection', ws => {
                     key: data.key
                 }, ws);
 
-                console.log('received: ' +  data.key);
+                console.log('received: ' + data.key);
 
                 break;
 
@@ -142,7 +114,7 @@ wss.on('connection', ws => {
     });
 
     ws.on('close', () => {
-        console.log('user logged off ' +  userId);
+        console.log('user logged off ' + userId);
 
         if (userId) {
             users.removeUser(userId);
@@ -157,5 +129,4 @@ wss.on('connection', ws => {
 });
 
 httpServer.listen(PORT, () => console.log(`Listening on ${PORT}!`));
-
 module.exports = app;
