@@ -66,7 +66,7 @@ class SpeakerUploader extends Component {
 
                         // Checks to see if an image is already assigned to a speaker.
                         // If it is, then replace the image. If not, push up a new image ref.
-                        dbRef.child(`speakerPhotos`).once(`value`, snapshot => {
+                        dbRef.child(`speakerPhotos`).on(`value`, snapshot => {
                             if (!snapshot.val() || !snapshot.val().hasOwnProperty(speakerNumber)) {
                                 console.log('nothing found');
                                 dbRef.child(`speakerPhotos`).child(speakerNumber).set({
@@ -81,8 +81,12 @@ class SpeakerUploader extends Component {
                                     }
                                 });
                             }
-                            dispatch(snapshot.val());
                         });
+                    })
+                    .then(() => {
+                        dbRef.child(`speakerPhotos`).on(`value`, snapshot => {
+                            dispatch(snapshot.val());
+                        })
                     });
             });
 

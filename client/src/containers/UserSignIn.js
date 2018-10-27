@@ -8,4 +8,10 @@ const mapDispatchToProps = dispatch => ({
     }
 });
 
-export const UserSignIn = connect((state) => ({users: state.users}), mapDispatchToProps)(UserSignInComponent);
+const mapStateToProps = state => ({
+    keyPress: state.keyPress.key,
+    photos: state.photos,
+    users: state.users
+});
+
+export const UserSignIn = connect(mapStateToProps, mapDispatchToProps)(UserSignInComponent);

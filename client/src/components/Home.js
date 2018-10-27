@@ -24,7 +24,7 @@ class HomePage extends Component {
     }
 
     render() {
-        const { authUser, users, setting } = this.props;
+        const { authUser, users } = this.props;
 
         const handleSetUserSettings = (e) => {
             e.preventDefault();
@@ -58,9 +58,6 @@ const UserList = ({ authUser, users, userState }) =>
                 <div key={key}>{users[key].email}</div>
             )
         }
-        {!!userState && userState.map(thing => {
-            <div key={thing.key}>{thing.key}{thing.value}</div>
-        })}
     </div>;
 
 const mapStateToProps = (state) => ({
