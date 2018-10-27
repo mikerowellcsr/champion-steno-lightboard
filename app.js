@@ -22,6 +22,12 @@ const corsOptions = {
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(cors());
 
+
+// Global path.
+app.get('*', (request, response) => {
+    response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 // Serve our base route that returns a Hello World cow
 app.get('/api/cow/', cors(corsOptions), async(req, res, next) => {
     try {
