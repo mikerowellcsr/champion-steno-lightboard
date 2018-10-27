@@ -26,6 +26,7 @@
     "react-favicon": "0.0.14",
     "react-filepond": "^5.0.0",
     "react-modal": "^3.5.1",
+    "react-pure-lifecycle": "^3.0.0",
     "react-redux": "^5.0.7",
     "react-redux-firebase": "^2.1.8",
     "react-router-dom": "^4.3.1",

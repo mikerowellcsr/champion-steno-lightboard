@@ -11,6 +11,7 @@ import { UserList } from '../containers/UserList';
 import setupSocket from '../sockets';
 import PropTypes from 'prop-types';
 import SpeakerDeckNoAuth from './elements/SpeakerDeckNoAuth';
+import * as speakerdeck from '../firebase/speakerdeck';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -34,15 +35,23 @@ class Dashboard extends React.Component {
 
     // Dispatch the action to Redux.
     sendKeyPress(key) {
-         this.props.dispatch({
-             type: 'SEND_KEY_PRESS',
-             key
-         });
+        this.props.dispatch({
+            type: 'SEND_KEY_PRESS',
+            key
+        });
     }
 
     componentDidMount() {
         const { store } = this.context;
+
         setupSocket(store.dispatch, `${this.props.authUser.displayName} (Admin)`);
+
+        speakerdeck.fetchSpeakerPhotos().then(snapshot => {
+            this.props.dispatch({
+                type: 'FETCH_SPEAKER_PHOTOS',
+                photos: snapshot.val()
+            });
+        });
     }
 
     render() {
@@ -67,25 +76,27 @@ class Dashboard extends React.Component {
             } else {
 
                 // Turn the input field red.
-                this.setState({inputValid: false});
+                this.setState({ inputValid: false });
 
                 // Blank out the input field.
                 e.target.value = '';
             }
         };
 
-        return(
+        return (
             <div>
-                <DocumentTitle title="Lightboard Dashboard"/>
+                <DocumentTitle title="Lightboard Dashboard" />
                 <Navigation />
                 <div className="main-container">
-                        <h1 className="speaker-deck__header">
-                            Speaker Deck
-                        </h1>
-                    <SpeakerDeckNoAuth activeSpeaker={this.props.keyPress} />
+                    <h1 className="speaker-deck__header">
+                        Speaker Deck
+                    </h1>
+                    <SpeakerDeckNoAuth
+                        activeSpeaker={ this.props.keyPress }
+                        photos={ this.props.photos } />
                     <Row className="margin-top">
-                        <Col sm={5} />
-                        <Col sm={2}>
+                        <Col sm={ 5 } />
+                        <Col sm={ 2 }>
                             <Input
                                 className="text-input"
                                 type="text"
@@ -94,18 +105,18 @@ class Dashboard extends React.Component {
                                 placeholder="Enter keystrokes."
                                 ref="control"
                                 autoFocus
-                                onChange={handleKeyPress}
-                                invalid={!this.state.inputValid}/>
+                                onChange={ handleKeyPress }
+                                invalid={ !this.state.inputValid } />
                         </Col>
-                        <Col sm={5} />
+                        <Col sm={ 5 } />
                     </Row>
                     <div>
-                        <Col sm={6}>
+                        <Col sm={ 6 }>
                             <div className="margin-bottom">
                                 <UserList />
                             </div>
                         </Col>
-                        <Col sm={10} />
+                        <Col sm={ 10 } />
                     </div>
                 </div>
             </div>

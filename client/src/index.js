@@ -12,7 +12,7 @@ import reducers from './reducers';
 
 import createSagaMiddleware from 'redux-saga';
 import { createStore, applyMiddleware } from 'redux';
-import handleKeyPress from './sagas';
+import rootSaga from './sagas';
 import ReconnectingWebsocket from 'reconnecting-websocket';
 const sagaMiddleWare = createSagaMiddleware();
 
@@ -35,7 +35,7 @@ const HOST = process.env.REACT_APP_ENV === 'dev'
 
 const socket = new ReconnectingWebsocket(HOST, [], rcwsOptions);
 
-sagaMiddleWare.run(handleKeyPress, { socket });
+sagaMiddleWare.run(rootSaga, { socket });
 
 ReactDOM.render(
     <Provider store={store}>

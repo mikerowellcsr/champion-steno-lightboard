@@ -4,12 +4,14 @@ import { fetchSpeakerPhotos } from '../actions';
 
 const mapDispatchToProps = dispatch => ({
     dispatch: photos => {
-        dispatch(fetchSpeakerPhotos(photos));
+        dispatch(fetchSpeakerPhotos(photos), { allowMore: true });
     }
 });
 
-const SpeakerDeckConfig = connect(state => ({
+const mapStateToProps = state => ({
     photos: state.photos
-}), mapDispatchToProps)(SpeakerDeckConfigComponent);
+});
+
+const SpeakerDeckConfig = connect(mapStateToProps, mapDispatchToProps)(SpeakerDeckConfigComponent);
 
 export default SpeakerDeckConfig;
