@@ -2,64 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c741d92d-091a-4022-8f15-0028336f08da" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/assets/fonts/GothamRounded-Book.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/fonts/GothamRounded-Book.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/fonts/GothamRounded-Book.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/fonts/GothamRounded-Book.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/fonts/GothamRounded-Light.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/fonts/GothamRounded-Light.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/fonts/GothamRounded-Light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/fonts/GothamRounded-Light.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/fonts/GothamRounded-Medium.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/fonts/GothamRounded-Medium.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/fonts/GothamRounded-Medium.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/fonts/GothamRounded-Medium.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaBold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaBold.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaBold.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaBold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaBold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaBoldItalic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaBoldItalic.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaBoldItalic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaBoldItalic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaBoldItalic.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaRegular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaRegular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaRegular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaRegular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaRegular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaRegular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaRegularItalic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaRegularItalic.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaRegularItalic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaRegularItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaRegularItalic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/fonts/EuropaRegularItalic.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/DashboardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/DashboardComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/elements/LightboxComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/elements/LightboxComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/elements/SpeakerDeck.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/elements/SpeakerDeck.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/elements/SpeakerDeckConfigComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/elements/SpeakerDeckConfigComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/elements/SpeakerDeckNoAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/elements/SpeakerDeckNoAuth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/elements/SpeakerUploader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/elements/SpeakerUploader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/elements/UserSignInComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/elements/UserSignInComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/elements/speakerPhoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/elements/speakerPhoto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/constants/ActionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/constants/ActionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/containers/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/containers/Lightbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Lightbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/containers/SpeakerDeckConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/SpeakerDeckConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/containers/UserSignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/UserSignIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/speakerphotos.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/speakerphotos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/sagas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/sagas/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -93,19 +37,19 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="23" />
-          <entry key="gitignore" value="2" />
+          <entry key="gitignore" value="3" />
           <entry key="html" value="1" />
           <entry key="js" value="618" />
-          <entry key="json" value="22" />
+          <entry key="json" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="23" />
           <entry key="HTML" value="1" />
-          <entry key="JSON" value="22" />
+          <entry key="JSON" value="23" />
           <entry key="JavaScript" value="618" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -177,11 +121,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/index.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="397">
               <caret line="145" column="1" selection-start-line="145" selection-start-column="1" selection-end-line="145" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -202,24 +160,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="789">
               <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/constants/ActionTypes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -318,7 +258,6 @@
         <option value="$PROJECT_DIR$/client/src/components/elements/dropzones/Speaker0.js" />
         <option value="$PROJECT_DIR$/client/src/components/elements/Speaker0Dropzone.js" />
         <option value="$PROJECT_DIR$/client/src/firebase/db.js" />
-        <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/client/src/firebase/settings.js" />
         <option value="$PROJECT_DIR$/client/src/containers/SpeakerConfig.js" />
         <option value="$PROJECT_DIR$/client/src/firebase/auth.js" />
@@ -350,6 +289,7 @@
         <option value="$PROJECT_DIR$/client/src/components/elements/LightboxComponent.js" />
         <option value="$PROJECT_DIR$/client/src/containers/Lightbox.js" />
         <option value="$PROJECT_DIR$/client/src/index.css" />
+        <option value="$PROJECT_DIR$/client/package.json" />
       </list>
     </option>
   </component>
@@ -582,12 +522,12 @@
       <workItem from="1540247247925" duration="100000" />
       <workItem from="1540253736583" duration="5678000" />
       <workItem from="1540330433304" duration="45242000" />
-      <workItem from="1540567656070" duration="36803000" />
+      <workItem from="1540567656070" duration="36966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="330600000" />
+    <option name="totallyTimeSpent" value="330763000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -620,13 +560,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/components/SignIn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1048">
-          <caret line="66" column="34" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/SignUp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
@@ -733,13 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1009,6 +935,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
           <caret line="145" column="1" selection-start-line="145" selection-start-column="1" selection-end-line="145" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
         </state>
       </provider>
     </entry>
