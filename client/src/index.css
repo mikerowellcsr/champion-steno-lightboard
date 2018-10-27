@@ -261,8 +261,8 @@ input {
 }
 
 .speaker-photo {
-    width: 300px;
-    height: 300px;
+    width: 16vw;
+    height: 16vw;
     background-color: #CCCCCC;
     display: inline-block;
     float: left;
