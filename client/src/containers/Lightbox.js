@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     dispatch: photos => {
-        dispatch(fetchSpeakerPhotos(photos), { allowMore: true });
+        dispatch(fetchSpeakerPhotos(photos));
     }
 });
 
