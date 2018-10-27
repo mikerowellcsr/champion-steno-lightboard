@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import { FilePond, registerPlugin } from 'react-filepond';
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import FilePondPluginImageResize from 'filepond-plugin-image-resize';
+import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size';
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 import 'filepond/dist/filepond.min.css';
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
-import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 import { db, storage } from '../../firebase/firebase';
+import Uuid from 'uuid/v4';
 
 registerPlugin(
     FilePondPluginImageResize,
     FilePondPluginImagePreview,
+    FilePondPluginFileValidateSize,
     FilePondPluginFileValidateType
 );
 
@@ -33,9 +36,10 @@ class SpeakerUploader extends Component {
     handleProcessing = (fieldName, file, metadata, load, error, progress, abort) => {
 
         const fileUpload = file;
+        const fileName = `${file.name}-${Uuid()}`;
         const { dispatch, speakerNumber } = this.props;
         const dbRef = db.ref(`/`);
-        const storageRef = storage.ref(`images/${file.name}`);
+        const storageRef = storage.ref(`images/${fileName}`);
         const uploadTask = storageRef.put(fileUpload);
 
         progress(true, 0, 1024);
@@ -56,7 +60,7 @@ class SpeakerUploader extends Component {
             () => {
                 load(uploadTask.snapshot.ref.fullPath);
 
-                storage.ref(`images`).child(file.name).getDownloadURL()
+                storage.ref(`images`).child(`${fileName}`).getDownloadURL()
                     .then(url => {
                         console.log(url);
 
@@ -78,7 +82,7 @@ class SpeakerUploader extends Component {
                                 });
                             }
                             dispatch(snapshot.val());
-                        })
+                        });
                     });
             });
 
@@ -102,8 +106,10 @@ class SpeakerUploader extends Component {
                     imageResizeTargetWidth={ 300 }
                     imageResizeTargetHeight={ 300 }
                     imageResizeMode='cover'
+                    imageResizeUpscale={ false }
                     labelFileTypeNotAllowed='File type invalid'
                     labelIdle='Drag photo or <span class="filepond--label-action">browse</span>'
+                    maxFileSize='2MB'
                     oninit={ this.handleInit }
                     allowMultiple={ false }
                     server={ { process: this.handleProcessing } }

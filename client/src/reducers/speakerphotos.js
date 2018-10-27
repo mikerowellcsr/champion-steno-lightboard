@@ -1,6 +1,6 @@
 import * as types from '../constants/ActionTypes';
 
-const fetchSpeakerPhotos = (state = [], action) => {
+const speakerPhotos = (state = [], action) => {
     switch (action.type) {
         case types.FETCH_SPEAKER_PHOTOS:
             console.log('reducer! ' + JSON.stringify(action.photos));
@@ -10,4 +10,4 @@ const fetchSpeakerPhotos = (state = [], action) => {
     }
 };
 
-export default fetchSpeakerPhotos;
+export default speakerPhotos;
