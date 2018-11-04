@@ -105,7 +105,8 @@ wss.on('connection', ws => {
 
                 break;
             case 'USER_LOGGED_OFF':
-                console.log('user logged off!');
+                console.log(`user logged off!`);
+                break;
             case 'SEND_KEY_PRESS':
                 broadcast({
                     type: 'SEND_KEY_PRESS',
@@ -122,7 +123,7 @@ wss.on('connection', ws => {
     });
 
     ws.on('close', () => {
-        console.log('user logged off ' + userId);
+        console.log(`user logged off ${userId}`);
 
         if (userId) {
             users.removeUser(userId);
