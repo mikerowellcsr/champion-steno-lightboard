@@ -1,3 +1,7 @@
+// Firebase settings example.
+// Be sure to fill in with your Firebase values
+// And rename file to "devconfig.js" before building.
+
 let devConfig;
 
 if (process.env.REACT_APP_ENV) {
