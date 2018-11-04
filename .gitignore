@@ -13,6 +13,7 @@
 .eslintrc.*
 addphoto.psd
 addphoto-small.psd
+/client/firebase/firebase.js
 
 # misc
 appcopy.js
