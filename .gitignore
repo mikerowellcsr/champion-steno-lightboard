@@ -11,12 +11,8 @@
 /build
 .idea
 .eslintrc.*
-addphoto.psd
-<<<<<<< HEAD
 addphoto-small.psd
 /client/src/firebase/devconfig.js
-=======
->>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
 
 # misc
 appcopy.js
