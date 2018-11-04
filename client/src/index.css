@@ -31,8 +31,6 @@
     font-style: normal;
 }
 
-<<<<<<< HEAD
-=======
 @media (min-width: 576px) {
     .card-deck .card {
         margin-left: 0;
@@ -45,7 +43,6 @@
     }
 }
 
->>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
 body, html {
     background-color: #FEFEFE;
     margin: 0;
@@ -202,13 +199,10 @@ input {
     border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
-<<<<<<< HEAD
 .navbar-badge__text--collapsed {
     display: none;
 }
 
-=======
->>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
 .navbar-light .navbar-brand {
     background-color: #00b9ff;
     color: #fff;
@@ -330,7 +324,6 @@ text-input:focus {
 
 .text-input::-ms-input-placeholder { /* Microsoft Edge */
     color: #DBE0DF;
-<<<<<<< HEAD
 }
 
 @media (min-width: 576px) {
@@ -416,7 +409,3 @@ text-input:focus {
         flex-flow: column;
     }
 }
-
-=======
-}
->>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c

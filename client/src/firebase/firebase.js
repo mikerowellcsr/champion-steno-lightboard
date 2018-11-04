@@ -9,6 +9,7 @@ import 'firebase/storage';
 // Be sure to update with your Firebase API values.
 import devConfig from './devconfig';
 
+
 const prodConfig = {
     apiKey: process.env.API_KEY,
     authDomain: process.env.AUTH_DOMAIN,
