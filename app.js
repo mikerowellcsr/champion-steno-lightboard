@@ -79,6 +79,7 @@ wss.on(`connection`, ws => {
             case `USER_LOGGED_ON`:
                 userId = data.id;
 
+                // Checks to see if the user exists before adding to the list.
                 console.log(`username:  ${data.username}`);
                 if (!users.checkIfUserExists(data.username)) {
                     users.addUser({
@@ -93,6 +94,7 @@ wss.on(`connection`, ws => {
                     users: users.listUsers()
                 }));
 
+                // Broadcast out the updated list of users.
                 broadcast({
                     type: `LIST_USERS`,
                     users: users.listUsers()
@@ -102,6 +104,7 @@ wss.on(`connection`, ws => {
                 break;
             case `USER_LOGGED_OFF`:
                 console.log(`user logged off!`);
+                break;
             case `SEND_KEY_PRESS`:
                 broadcast({
                     type: `SEND_KEY_PRESS`,
