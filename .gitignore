@@ -12,7 +12,6 @@
 .idea
 .eslintrc.*
 addphoto.psd
-/client/src/firebase/firebase.js
 
 # misc
 appcopy.js
