@@ -46,11 +46,25 @@ class NavigationAuth extends Component {
         };
 
         this.toggle = this.toggle.bind(this);
+<<<<<<< HEAD
+=======
+        this.toggleLeftPane = this.toggleLeftPane.bind(this);
+>>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
     }
 
     toggle() {
         this.setState({
+<<<<<<< HEAD
             isOpen: !this.state.isOpen
+=======
+            isPaneOpenBottom: !this.state.isPaneOpenBottom
+        });
+    }
+
+    toggleLeftPane() {
+        this.setState({
+            isPaneOpenBottom: true
+>>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
         });
     }
 
@@ -67,15 +81,23 @@ class NavigationAuth extends Component {
             <Navbar light
                     fixed="top"
                     expand="md">
+<<<<<<< HEAD
                 <NavbarBrand href="/dashboard" className="navbar-badge__text--expanded">Champion Steno Lightboard</NavbarBrand>
                 <NavbarBrand href="/dashboard" className="navbar-badge__text--collapsed">Lightboard</NavbarBrand>
+=======
+                <NavbarBrand href="/dashboard">Champion Steno Lightboard</NavbarBrand>
+>>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
                 <NavbarToggler onClick={ this.toggle } />
                 <Collapse isOpen={ this.state.isOpen } navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
                             <NavLink href="/account">
                                 <FontAwesomeIcon icon="user" />
+<<<<<<< HEAD
                                 <span className="nav-link__text">&nbsp;&nbsp;{ this.props.user }</span>
+=======
+                                &nbsp;&nbsp;{ this.props.user }
+>>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
                             </NavLink>
                         </NavItem>
                         <NavItem>
@@ -88,7 +110,11 @@ class NavigationAuth extends Component {
                                          )
                                      }>
                                 <FontAwesomeIcon icon="cog" />
+<<<<<<< HEAD
                                 <span className="nav-link__text">&nbsp;&nbsp;Configure Deck</span>
+=======
+                                &nbsp;&nbsp;Configure Deck
+>>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
                             </NavLink>
                         </NavItem>
                         <NavItem>
@@ -96,7 +122,11 @@ class NavigationAuth extends Component {
                                 href="#"
                                 onClick={ auth.doSignOut }>
                                 <FontAwesomeIcon icon="sign-out-alt" />
+<<<<<<< HEAD
                                 <span className="nav-link__text">&nbsp;&nbsp;Sign Out</span>
+=======
+                                &nbsp;&nbsp;Sign Out
+>>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
                             </NavLink>
                         </NavItem>
                     </Nav>
@@ -136,8 +166,12 @@ class NavigationNonAuth extends React.Component {
         return (
             <div>
                 <Navbar light fixed="top" expand="md">
+<<<<<<< HEAD
                     <NavbarBrand href="/" className="navbar-badge__text--expanded">Champion Steno Lightboard</NavbarBrand>
                     <NavbarBrand href="/" className="navbar-badge__text--collapsed">Lightboard</NavbarBrand>
+=======
+                    <NavbarBrand href="/">Champion Steno Lightboard</NavbarBrand>
+>>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
                     <NavbarToggler onClick={ this.toggle } />
                     <Collapse isOpen={ this.state.isOpen } navbar>
                         <Nav className="ml-auto" navbar>

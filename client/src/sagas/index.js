@@ -7,4 +7,8 @@ const rootSaga = function* rootSaga(params) {
     });
 };
 
+<<<<<<< HEAD:client/src/sagas/index.js
 export default rootSaga;
+=======
+export default rootSaga;
+>>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c:client/src/sagas/index.js

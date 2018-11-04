@@ -53,8 +53,13 @@ class UserSignIn extends React.Component {
                 <div className="padding-top" />
                 <Container>
                     <Row>
+<<<<<<< HEAD:client/src/components/elements/UserSignInComponent.js
                         <Col sm="4" xs="4" />
                         <Col sm="auto" xs="auto">
+=======
+                        <Col xs="6" sm="4" />
+                        <Col xs="6" sm="4">
+>>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c:client/src/components/elements/UserSignInComponent.js
                             <img src={ Logo } className='sign-in__logo' alt="Champion Steno Logo" />
                             <Form onSubmit={ this.handleSubmit }>
                                 <FormGroup>

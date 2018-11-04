@@ -18,15 +18,24 @@ const SignInPage = ({ history }) =>
         <DocumentTitle title="Admin Sign-In"/>
         <Container>
             <Row>
+<<<<<<< HEAD
                 <Col sm="4" xs="6" />
                 <Col sm="auto" xs="auto">
+=======
+                <Col xs="6" sm="4" />
+                <Col xs="6" sm="4">
+>>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
                     <img src={Logo} className='sign-in__logo' alt="Champion Steno Logo" />
                     <h4>
                         Lightboard Admin Sign-In
                     </h4>
                     <SignInForm history={history} />
                 </Col>
+<<<<<<< HEAD
                 <Col sm="4" xs="6" />
+=======
+                <Col xs="6" sm="4" />
+>>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
             </Row>
         </Container>
     </div>;
