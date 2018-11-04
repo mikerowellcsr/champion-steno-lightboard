@@ -7,7 +7,7 @@ import 'firebase/storage';
 
 // Contains API secrets.
 // Be sure to update with your Firebase API values.
-import devConfig from './devconfig';
+// import devConfig from './devconfig';
 
 
 const prodConfig = {
