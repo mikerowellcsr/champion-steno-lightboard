@@ -104,7 +104,7 @@ wss.on(`connection`, ws => {
                 console.log(`\n users in ${JSON.stringify(users.listUsers())}`);
                 break;
             case `USER_LOGGED_OFF`:
-                console.log(`user logged off!`);
+                // console.log(`user logged off!`);
                 break;
 
             // Fire keypress event when admin presses keys in lightboard.
