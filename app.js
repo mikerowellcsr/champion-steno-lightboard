@@ -120,7 +120,6 @@ wss.on(`connection`, ws => {
     });
 
     ws.on(`close`, () => {
-        console.log(`user logged off ${userId}`);
 
         // When user logs off, remove the user with their user ID from the list.
         if (userId) {
