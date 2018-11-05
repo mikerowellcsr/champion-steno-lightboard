@@ -7,8 +7,6 @@ import 'firebase/storage';
 
 // Contains API secrets.
 // Be sure to update with your Firebase API values.
-// import devConfig from './devconfig';
-
 
 const prodConfig = {
     apiKey: process.env.API_KEY,
@@ -20,7 +18,7 @@ const prodConfig = {
 };
 
 const config = process.env.REACT_APP_ENV === `dev`
-    ? devConfig
+    ? require('./devconfig')
     : prodConfig;
 
 if (!firebase.apps.length) {
