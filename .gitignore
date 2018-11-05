@@ -13,6 +13,7 @@
 .eslintrc.*
 addphoto-small.psd
 /client/src/firebase/devconfig.js
+/client/.env
 
 # misc
 appcopy.js

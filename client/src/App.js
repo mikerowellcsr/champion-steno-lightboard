@@ -15,6 +15,8 @@ import './App.css';
 import DashboardComponent from './containers/Dashboard';
 import Favicon from 'react-favicon';
 
+// console.log(process.env);
+
 const App = () =>
     <BrowserRouter>
         <div>
