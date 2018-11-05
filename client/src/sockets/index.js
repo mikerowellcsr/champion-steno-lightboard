@@ -1,7 +1,8 @@
 import * as types from '../constants/ActionTypes';
-import {userLoggedOn, populateUserList, keyPressReceived } from '../actions';
+import { userLoggedOn, populateUserList, keyPressReceived } from '../actions';
 import Uuid from 'uuid/v4';
 import ReconnectingWebSocket from 'reconnecting-websocket';
+
 const HOST = process.env.REACT_APP_ENV === 'dev'
     ? 'ws://localhost:8000'
     : window.location.origin.replace(/^http/, 'ws');

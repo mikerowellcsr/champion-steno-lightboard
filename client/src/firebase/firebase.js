@@ -18,7 +18,7 @@ const prodConfig = {
 };
 
 const config = process.env.REACT_APP_ENV === `dev`
-    ? require('./devconfig')
+    ? require('./devconfig.js')
     : prodConfig;
 
 if (!firebase.apps.length) {
