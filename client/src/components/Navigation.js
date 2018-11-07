@@ -51,8 +51,7 @@ class NavigationAuth extends Component {
 
     toggle() {
         this.setState({
-            isOpen: !this.state.isOpen,
-            isPaneOpenBottom: !this.state.isPaneOpenBottom
+            isOpen: !this.state.isOpen
         });
     }
 
@@ -72,10 +71,12 @@ class NavigationAuth extends Component {
         library.add(faSignOutAlt);
 
         return <div>
+            <DocumentTitle title="Champion Steno Lightboard" />
             <Navbar light
                     fixed="top"
                     expand="md">
-                <NavbarBrand href="/dashboard" className="navbar-badge__text--expanded">Champion Steno Lightboard</NavbarBrand>
+                <NavbarBrand href="/dashboard" className="navbar-badge__text--expanded">Champion Steno
+                    Lightboard</NavbarBrand>
                 <NavbarBrand href="/dashboard" className="navbar-badge__text--collapsed">Lightboard</NavbarBrand>
 
                 <NavbarToggler onClick={ this.toggle } />
@@ -96,6 +97,7 @@ class NavigationAuth extends Component {
                                              })
                                          )
                                      }>
+
                                 <FontAwesomeIcon icon="cog" />
                                 <span className="nav-link__text">&nbsp;&nbsp;Configure Deck</span>
                             </NavLink>
@@ -112,7 +114,6 @@ class NavigationAuth extends Component {
                 </Collapse>
             </Navbar>
             <Container>
-                <DocumentTitle title="Champion Steno Lightboard" />
                 <div ref={ ref => this.el = ref }>
                     <SlidingPane
                         className="sliding-pane"
@@ -145,7 +146,8 @@ class NavigationNonAuth extends React.Component {
         return (
             <div>
                 <Navbar light fixed="top" expand="md">
-                    <NavbarBrand href="/" className="navbar-badge__text--expanded">Champion Steno Lightboard</NavbarBrand>
+                    <NavbarBrand href="/" className="navbar-badge__text--expanded">Champion Steno
+                        Lightboard</NavbarBrand>
                     <NavbarBrand href="/" className="navbar-badge__text--collapsed">Lightboard</NavbarBrand>
                     <NavbarToggler onClick={ this.toggle } />
                     <Collapse isOpen={ this.state.isOpen } navbar>

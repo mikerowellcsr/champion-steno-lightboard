@@ -20,6 +20,7 @@ const UserListComponent =({ users }) => (
             Attendance <Badge color="success" pill>{ users && users.length > 1 ? users.length - 1 : '' }</Badge>
         </h1>
         <Table
+            responsive
             borderless
             className="user-list__active-users">
             <thead>

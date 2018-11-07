@@ -95,8 +95,18 @@ class Dashboard extends React.Component {
                         activeSpeaker={ this.props.keyPress }
                         photos={ this.props.photos } />
                     <Row className="margin-top">
-                        <Col sm={ 5 } />
-                        <Col sm={ 2 }>
+                        <Col
+                            xs="3"
+                            sm="3"
+                            md="4"
+                            lg="4"
+                            xl="5" />
+                        <Col
+                            xs="6"
+                            sm="6"
+                            md="4"
+                            lg="4"
+                            xl="2">
                             <Input
                                 className="text-input"
                                 type="text"
@@ -108,15 +118,24 @@ class Dashboard extends React.Component {
                                 onChange={ handleKeyPress }
                                 invalid={ !this.state.inputValid } />
                         </Col>
-                        <Col sm={ 5 } />
+                        <Col
+                            xs="3"
+                            sm="3"
+                            md="4"
+                            lg="4"
+                            xl="5" />
                     </Row>
                     <div>
-                        <Col sm={ 6 }>
+                        <Col
+                            xs="auto"
+                            sm="auto"
+                            md="auto"
+                            lg="10"
+                            xl="6">
                             <div className="margin-bottom">
                                 <UserList />
                             </div>
                         </Col>
-                        <Col sm={ 10 } />
                     </div>
                 </div>
             </div>

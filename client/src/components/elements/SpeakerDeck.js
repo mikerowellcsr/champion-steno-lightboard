@@ -1,11 +1,8 @@
 import React from 'react';
 import {
     Card,
-<<<<<<< HEAD
     CardImgOverlay,
-=======
     CardImg,
->>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
     CardTitle,
     CardDeck,
     CardBody,
@@ -43,11 +40,7 @@ class SpeakerDeck extends React.Component {
                     <Card
                         color={ this.props.activeSpeaker === 0 ? active.color : '' }
                         className={ this.props.activeSpeaker === 0 ? active.class : '' }>
-<<<<<<< HEAD
-                        <CardImgOverlay top
-=======
                         <CardImg top
->>>>>>> 45e0acdaccf72a0b1cd35bfa55105c4a49343f3c
                                  id="speaker0"
                                  width="100%"
                                  src="/images/speaker-placeholder.png"
