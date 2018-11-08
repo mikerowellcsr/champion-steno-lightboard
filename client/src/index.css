@@ -396,6 +396,11 @@ text-input:focus {
         font-size: 1.6em;
         margin: 2em 0 1em 0
     }
+
+    .main-container__lightboard h1 {
+        font-size: 1.6em;
+        margin: 2em 0 1em 0
+    }
 }
 
 /*Media Queries*/
@@ -406,7 +411,7 @@ and (min-device-width: 320px)
 and (max-device-width: 480px) {
     .card {
         height: 234px;
-        color: green;
+        /*color: green;*/
         min-width: 300px;
     }
 
@@ -423,7 +428,7 @@ and (max-device-width: 480px) {
 @media only screen
 and (min-width: 321px) {
     .card {
-        color: red;
+        /*color: red;*/
         min-width: 12em;
     }
 
@@ -442,7 +447,7 @@ and (min-width: 321px) {
     }
 
     .card-img-top {
-        object-fit: contain;
+        display: none;
     }
 
     .card-title {
@@ -465,6 +470,10 @@ and (min-width: 321px) {
         text-align: center;
     }
 
+    .main-container__lightboard h1 {
+        text-align: center;
+    }
+
     .text-input {
         margin-bottom: 1.3em;
     }
@@ -474,7 +483,7 @@ and (min-width: 321px) {
 @media only screen
 and (max-width: 320px) {
     .card {
-        color: hotpink;
+        /*color: hotpink;*/
         max-height: 12vh;
         min-width: 12em;
     }
@@ -527,7 +536,9 @@ and (max-width: 320px) {
 @media only screen
 and (min-device-width: 768px)
 and (max-device-width: 1024px) {
-    /* Styles */
+    .card-img-top {
+        display: unset;
+    }
 }
 
 /* iPads (landscape) ----------- */
@@ -535,9 +546,9 @@ and (max-device-width: 1024px) {
 and (min-device-width: 768px)
 and (max-device-width: 1024px)
 and (orientation: landscape) {
-    .card {
-        color: gray;
-    }
+    /*.card {*/
+        /*color: gray;*/
+    /*}*/
 
     .line-break {
         display: inline;
@@ -550,7 +561,7 @@ and (min-device-width: 768px)
 and (max-device-width: 1024px)
 and (orientation: portrait) {
     .card {
-        color: teal;
+        /*color: teal;*/
         min-width: 300px;
     }
 }
@@ -560,7 +571,7 @@ and (orientation: portrait) {
 @media only screen
 and (min-width: 924px) {
     .card {
-        color: yellow;
+        /*color: yellow;*/
         flex: 0 0 auto;
     }
 
@@ -570,6 +581,7 @@ and (min-width: 924px) {
 
     .card-img-top {
         object-fit: cover;
+        display: unset;
     }
 
     .line-break {
@@ -593,7 +605,7 @@ and (min-width: 924px) {
 @media only screen
 and (min-width: 1424px) {
     .card {
-        color: blue;
+        /*color: blue;*/
         min-width: 230px;
     }
 
@@ -625,17 +637,25 @@ and (min-width: 1424px) {
     .speaker-deck__header {
         text-align: unset;
     }
+
+    .main-container__lightboard h1 {
+        text-align: unset;
+    }
 }
 
 /* Large screens ----------- */
 @media only screen
 and (min-width: 1824px) {
-    .card {
-        color: fuchsia;
-    }
+    /*.card {*/
+        /*color: fuchsia;*/
+    /*}*/
 
     .nav-link__text {
         display: unset;
+    }
+
+    .main-container__lightboard h1 {
+        text-align: unset;
     }
 
     .speaker-deck__header {
