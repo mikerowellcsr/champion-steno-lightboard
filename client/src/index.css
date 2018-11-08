@@ -271,6 +271,19 @@ input {
     position: relative;
 }
 
+.speaker-photo-picker {
+    margin: 0 0 3em 0;
+    text-align: left;
+}
+
+.speaker-photo-picker .speaker-photo {
+    margin: 0 1em 0 0;
+}
+
+.speaker-photo-picker__contents {
+
+}
+
 .speaker-photo img {
     max-width: 100%;
     max-height: 100%;
@@ -392,6 +405,14 @@ and (max-device-width: 480px) {
         color: green;
         min-width: 300px;
     }
+
+    .card {
+        max-height: 12vh;
+    }
+
+    .table thead th {
+        vertical-align: top;
+    }
 }
 
 /* Smartphones (landscape) ----------- */
@@ -412,7 +433,60 @@ and (min-width: 321px) {
     }
 
     .card-deck .card {
-        margin: 0 0 1em 1em;
+        margin: 0 1em 1em 1em;
+        padding: .5em;
+    }
+
+    .card-img-top {
+        display: none;
+    }
+
+    .card-title {
+        text-align: center;
+    }
+
+    .line-break {
+        display: none;
+    }
+
+    .margin-top {
+        margin: 0;
+    }
+
+    .nav-link__text {
+        display: unset;
+    }
+
+    .speaker-deck__header {
+        text-align: center;
+    }
+
+    .text-input {
+        margin-bottom: 1.3em;
+    }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width: 320px) {
+    .card {
+        color: hotpink;
+        max-height: 12vh;
+        min-width: 12em;
+    }
+
+    .card-body {
+        padding: 1em;
+    }
+
+    .card-deck {
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .card-deck .card {
+        margin: 0 1em 1em 1em;
+        padding: .1em;
     }
 
     .card-img-top {
@@ -435,17 +509,12 @@ and (min-width: 321px) {
         text-align: center;
     }
 
-    .text-input {
-       margin-bottom: 1.3em;
+    .table thead th {
+        vertical-align: top;
     }
-}
 
-/* Smartphones (portrait) ----------- */
-@media only screen
-and (max-width: 320px) {
-    .card {
-        color: hotpink;
-        min-width: 300px;
+    .text-input {
+        margin-bottom: 1.3em;
     }
 
 }
@@ -453,7 +522,7 @@ and (max-width: 320px) {
 @media only screen
 and (min-width: 471px) {
     .nav-link__text {
-         display: none;
+        display: none;
     }
 }
 
