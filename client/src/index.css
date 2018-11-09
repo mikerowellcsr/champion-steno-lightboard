@@ -250,7 +250,8 @@ input {
 }
 
 .sign-in__logo {
-    margin: 4em 2em 1.5em 2em;
+    margin-top: 3em;
+    max-width: 60vw;
 }
 
 .sign-in__logo_parent {
@@ -504,7 +505,7 @@ and (min-width: 321px) {
 and (max-width: 320px) {
     .card {
         /*color: hotpink;*/
-        max-height: 12vh;
+        max-height: 10vh;
         min-width: 12em;
     }
 
@@ -559,6 +560,10 @@ and (max-device-width: 1024px) {
     .card-img-top {
         display: unset;
     }
+    
+    .nav-link__text {
+        display: none;
+    }
 }
 
 /* iPads (landscape) ----------- */
@@ -572,6 +577,10 @@ and (orientation: landscape) {
 
     .line-break {
         display: inline;
+    }
+    
+    .nav-link__text {
+        display: none;
     }
 }
 
