@@ -35,6 +35,7 @@ const SpeakerDeck = ({ activeSpeaker, photos }) => {
                     <CardTitle>Witness</CardTitle>
                 </CardBody>
             </Card>
+            <div className="line-break" />
             <Card color={ activeSpeaker === 2 ? active.color : '' }
                   className={ activeSpeaker === 2 ? `speaker2 ${active.class}` : 'speaker2' }>
                 <SpeakerPhoto
@@ -45,7 +46,6 @@ const SpeakerDeck = ({ activeSpeaker, photos }) => {
                     <CardTitle>The Court</CardTitle>
                 </CardBody>
             </Card>
-            <div className="line-break" />
             <Card color={ activeSpeaker === 3 ? active.color : '' }
                   className={ activeSpeaker === 3 ? `speaker3 ${active.class}` : 'speaker3' }>
                 <SpeakerPhoto

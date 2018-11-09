@@ -107,6 +107,7 @@ class Dashboard extends React.Component {
                             md="4"
                             lg="4"
                             xl="2">
+                            <div className="margin-top" />
                             <Input
                                 className="text-input"
                                 type="text"
