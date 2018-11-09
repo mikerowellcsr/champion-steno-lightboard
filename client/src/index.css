@@ -323,7 +323,6 @@ input {
 }
 
 .user-sign-in--dashboard-link:hover {
-    /*padding-left: 15px;*/
     color: #517594
 }
 
@@ -365,6 +364,10 @@ text-input:focus {
 
     .main-container {
         margin: 0 1em 0 1em;
+    }
+
+    .main-container__lightboard h1 {
+        display: none;
     }
 
     .ml-auto, .mx-auto {
@@ -484,6 +487,11 @@ and (min-width: 321px) {
 
     .main-container__lightboard h1 {
         text-align: center;
+    }
+
+    .main-container__lightboard {
+        margin: 4em 5em 0 5em;
+        padding: 3em 0 3em 0;
     }
 
     .text-input {
