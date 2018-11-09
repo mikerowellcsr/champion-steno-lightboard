@@ -15,23 +15,37 @@ import DocumentTitle from 'react-document-title';
 
 const SignInPage = ({ history }) =>
     <div className="sign-in-box">
-        <DocumentTitle title="Admin Sign-In"/>
+        <DocumentTitle title="Admin Sign-In" />
         <Container>
             <Row>
-                <Col sm="4" xs="6" />
-                <Col sm="auto" xs="auto">
-                    <img src={Logo} className='sign-in__logo' alt="Champion Steno Logo" />
+                <Col
+                    xs="0"
+                    sm="2"
+                    md="3"
+                    lg="4" />
+                <Col
+                    xs="12"
+                    sm="8"
+                    md="6"
+                    lg="4">
+                    <div className="sign-in__logo_parent">
+                        <img src={ Logo } className='sign-in__logo' alt="Champion Steno Logo" />
+                    </div>
                     <h4>
                         Lightboard Admin Sign-In
                     </h4>
-                    <SignInForm history={history} />
+                    <SignInForm history={ history } />
                 </Col>
-                <Col sm="4" xs="6" />
+                <Col
+                    xs="0"
+                    sm="2"
+                    md="3"
+                    lg="4" />
             </Row>
         </Container>
     </div>;
 
-const byPropKey = (propertyName, value)  => () => ({
+const byPropKey = (propertyName, value) => () => ({
     [propertyName]: value
 });
 
@@ -43,9 +57,9 @@ const INITIAL_STATE = {
 
 class SignInForm extends Component {
     constructor(props) {
-         super(props);
+        super(props);
 
-         this.state = { ...INITIAL_STATE };
+        this.state = { ...INITIAL_STATE };
     }
 
     onSubmit = (e) => {
@@ -85,26 +99,26 @@ class SignInForm extends Component {
             email === '' ||
             password === '';
 
-        return(
+        return (
             <div>
-                <Form onSubmit={this.onSubmit}>
+                <Form onSubmit={ this.onSubmit }>
                     <div className="text-input">
                         <FormGroup row>
                             <Label
                                 size="lg"
                                 for="email"
-                                sm={4}>
+                                sm={ 4 }>
                                 Email
                             </Label>
-                            <Col sm={8}>
+                            <Col sm={ 8 }>
                                 <Input
                                     autoFocus
                                     bsSize="lg"
                                     type="text"
                                     name="email"
                                     id="email"
-                                    value={this.email}
-                                    onChange={e => this.setState(byPropKey('email', e.target.value))}
+                                    value={ this.email }
+                                    onChange={ e => this.setState(byPropKey('email', e.target.value)) }
                                     required
                                 />
                             </Col>
@@ -113,17 +127,17 @@ class SignInForm extends Component {
                             <Label
                                 size="lg"
                                 for="password"
-                                sm={4}>
+                                sm={ 4 }>
                                 Password
                             </Label>
-                            <Col sm={8}>
+                            <Col sm={ 8 }>
                                 <Input
                                     bsSize="lg"
                                     type="password"
                                     name="password"
                                     id="password"
-                                    value={this.password}
-                                    onChange={e => this.setState(byPropKey('password', e.target.value))}
+                                    value={ this.password }
+                                    onChange={ e => this.setState(byPropKey('password', e.target.value)) }
                                     required
                                 />
                             </Col>
@@ -131,14 +145,14 @@ class SignInForm extends Component {
                         {
                             !errors
                                 ? ''
-                                :  <FormGroup row className="sign-in__errors_form-group">
-                                    <div className="sign-in__errors">{ <p>{errors.message}</p> }</div>
+                                : <FormGroup row className="sign-in__errors_form-group">
+                                    <div className="sign-in__errors">{ <p>{ errors.message }</p> }</div>
                                 </FormGroup>
                         }
                         <Button
                             size="lg"
                             type="submit"
-                            disabled={isInvalid}
+                            disabled={ isInvalid }
                             color="info"
                             block>
                             Log in
@@ -146,7 +160,7 @@ class SignInForm extends Component {
                     </div>
                 </Form>
             </div>
-        )
+        );
     }
 }
 

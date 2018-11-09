@@ -53,12 +53,22 @@ class UserSignIn extends React.Component {
                 <div className="padding-top" />
                 <Container>
                     <Row>
-                        <Col sm="4" xs="4" />
-                        <Col sm="auto" xs="auto">
-                            <img src={ Logo } className='sign-in__logo' alt="Champion Steno Logo" />
+                        <Col
+                            xs="0"
+                            sm="2"
+                            md="3"
+                            lg="4" />
+                        <Col
+                            xs="12"
+                            sm="8"
+                            md="6"
+                            lg="4">
+                            <div className="sign-in__logo_parent">
+                                <img src={ Logo } className='sign-in__logo' alt="Champion Steno Logo" />
+                            </div>
                             <Form onSubmit={ this.handleSubmit }>
                                 <FormGroup>
-                                    <Label for="name" size="lg" sm={ 2 }>Name</Label>
+                                    <Label for="name" size="lg" sm="2">Name</Label>
                                     <Col sm={ 10 } className='text-input'>
                                         <Input
                                             autoFocus
@@ -73,7 +83,7 @@ class UserSignIn extends React.Component {
                                     </Col>
                                 </FormGroup>
                                 <FormGroup>
-                                    <Col sm={ 10 }>
+                                    <Col sm="12">
                                         <Button
                                             size="lg"
                                             type="submit"
@@ -86,7 +96,11 @@ class UserSignIn extends React.Component {
                                 <DashboardLink authUser={ this.props.authUser } />
                             </div>
                         </Col>
-                        <Col xs="6" sm="4" />
+                        <Col
+                            xs="0"
+                            sm="2"
+                            md="3"
+                            lg="4" />
                     </Row>
                 </Container>
             </div>
