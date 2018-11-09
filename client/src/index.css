@@ -121,6 +121,10 @@ input {
     padding: 0 1em 1em 0;
 }
 
+.dashboard-link__parent {
+    margin: 0 0 0 15px;
+}
+
 .filepond--root {
     max-width: 40%;
 }
@@ -188,6 +192,10 @@ input {
 }
 
 .margin-top {
+    margin: 2em 0 0 0;
+}
+
+.margin-top__wide {
     margin: 2em 0 0 0;
 }
 

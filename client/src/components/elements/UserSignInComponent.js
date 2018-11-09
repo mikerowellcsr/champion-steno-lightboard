@@ -92,9 +92,8 @@ class UserSignIn extends React.Component {
                                     </Col>
                                 </FormGroup>
                             </Form>
-                            <div className="margin-top">
+                            <div className="margin-top__wide" />
                                 <DashboardLink authUser={ this.props.authUser } />
-                            </div>
                         </Col>
                         <Col
                             xs="0"
@@ -109,7 +108,7 @@ class UserSignIn extends React.Component {
 }
 
 const DashboardLink = ({ authUser }) =>
-    <div>
+    <div className="dashboard-link__parent">
         { authUser ? <a href="/dashboard"
                         title="To Dashboard"
                         className="user-sign-in--dashboard-link">
