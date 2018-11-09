@@ -449,7 +449,7 @@ and (min-width: 321px) {
     }
 
     .card-body {
-        padding: 3% 0 .5em 0;
+        padding: 0;
     }
 
     .card-deck {
@@ -459,8 +459,7 @@ and (min-width: 321px) {
 
     .card-deck .card {
         margin: 0 1em 1em 1em;
-        max-height: 9vh;
-        padding: 5%;
+        max-height: 9.5vh;
     }
 
     .card-img-top {
@@ -676,6 +675,7 @@ and (min-width: 1424px) {
     }
 
     .card-img-top {
+        display: unset;
         object-fit: cover;
     }
 
@@ -723,60 +723,60 @@ and (min-width: 1824px) {
 @media only screen
 and (-webkit-min-device-pixel-ratio: 1.5), only screen
 and (min-device-pixel-ratio: 1.5) {
-    .card {
-        /*color: red;*/
-        min-width: 12em;
-    }
+    /*.card {*/
+        /*!*color: red;*!*/
+        /*min-width: 12em;*/
+    /*}*/
 
-    .card-body {
-        padding: 3% 0 .5em 0;
-    }
+    /*.card-body {*/
+        /*padding: 3% 0 .5em 0;*/
+    /*}*/
 
-    .card-deck {
-        flex-flow: row wrap;
-        justify-content: space-around;
-    }
+    /*.card-deck {*/
+        /*flex-flow: row wrap;*/
+        /*justify-content: space-around;*/
+    /*}*/
 
-    .card-deck .card {
-        margin: 0 1em 1em 1em;
-        max-height: 9vh;
-        padding: 5%;
-    }
+    /*.card-deck .card {*/
+        /*margin: 0 1em 1em 1em;*/
+        /*max-height: 9vh;*/
+        /*padding: 5%;*/
+    /*}*/
 
-    .card-img-top {
-        display: none;
-    }
+    /*.card-img-top {*/
+        /*!*display: none;*!*/
+    /*}*/
 
-    .card-title {
-        text-align: center;
-    }
+    /*.card-title {*/
+        /*text-align: center;*/
+    /*}*/
 
-    .line-break {
-        display: none;
-    }
+    /*.line-break {*/
+        /*display: none;*/
+    /*}*/
 
-    .margin-top {
-        margin: 1em 2.5em 0 2.5em;
-    }
+    /*.margin-top {*/
+        /*margin: 1em 2.5em 0 2.5em;*/
+    /*}*/
 
-    .nav-link__text {
-        display: unset;
-    }
+    /*.nav-link__text {*/
+        /*display: unset;*/
+    /*}*/
 
-    .speaker-deck__header {
-        text-align: center;
-    }
+    /*.speaker-deck__header {*/
+        /*text-align: center;*/
+    /*}*/
 
-    .main-container__lightboard h1 {
-        text-align: center;
-    }
+    /*.main-container__lightboard h1 {*/
+        /*text-align: center;*/
+    /*}*/
 
-    .main-container__lightboard {
-        margin: 4em 5em 0 5em;
-        padding: 3em 0 3em 0;
-    }
+    /*.main-container__lightboard {*/
+        /*margin: 4em 5em 0 5em;*/
+        /*padding: 3em 0 3em 0;*/
+    /*}*/
 
-    .text-input {
-        margin-bottom: 1.3em;
-    }
+    /*.text-input {*/
+        /*margin-bottom: 1.3em;*/
+    /*}*/
 }
