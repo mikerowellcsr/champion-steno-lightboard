@@ -624,6 +624,10 @@ and (min-width: 924px) {
         flex: 0 0 auto;
     }
 
+    .card-body {
+        padding: 1em 0 0 0;
+    }
+
     .card-deck {
         justify-content: center;
     }
@@ -662,6 +666,10 @@ and (min-width: 1424px) {
     .card {
         /*color: blue;*/
         min-width: 230px;
+    }
+
+    .card-body {
+        padding: 1em 0 0 0;
     }
 
     .card-deck {
