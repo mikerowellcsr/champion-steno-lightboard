@@ -353,6 +353,8 @@ text-input:focus {
     color: #DBE0DF;
 }
 
+/*Media Queries!*/
+
 @media screen and (max-width: 750px) {
     .card-deck {
         flex-direction: column;
@@ -397,7 +399,7 @@ text-input:focus {
 
     .navbar-light .navbar-toggler {
         border-color: transparent;
-        padding: 1em;
+        margin: .5em;
     }
 
     .navbar-badge__text--expanded {
@@ -435,16 +437,19 @@ and (max-device-width: 480px) {
         max-height: 12vh;
     }
 
+    .navbar-light .navbar-brand {
+        padding: .5em 1.5em .5em 1.5em
+    }
+
     .table thead th {
         vertical-align: top;
     }
 }
 
-/* Smartphones (landscape) ----------- */
+/* Smartphones */
 @media only screen
 and (min-width: 321px) {
     .card {
-        /*color: red;*/
         min-width: 12em;
     }
 
@@ -500,7 +505,56 @@ and (min-width: 321px) {
     }
 }
 
-/* Smartphones (portrait) ----------- */
+/* Smartphones (landscape) */
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 825px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    .card {
+        min-width: 12em;
+        /*color: purple;*/
+    }
+
+    .card-body {
+        padding: 0 !important;
+    }
+
+    .card-deck {
+        flex-flow: row wrap;
+        max-width: 100%;
+    }
+
+    .card-deck .card {
+        flex: 0 1 0;
+        max-height: 15vh !important;
+    }
+
+    .card-img-top {
+        display: none !important;
+    }
+
+    .line-break {
+        display: none;
+    }
+
+    .main-container__lightboard {
+        margin: 3em 1em 0 1em;
+    }
+
+    .main-container__lightboard h1 {
+        display: none;
+    }
+
+    .speaker-deck__header {
+        font-size: 1.5em;
+        margin: 2em 0 1em 0;
+    }
+
+}
+
+/* Smartphones (portrait) */
 @media only screen
 and (max-width: 320px) {
     .card {
@@ -560,6 +614,10 @@ and (min-device-width: 768px)
 and (max-device-width: 1024px) {
     .card-deck .card {
         max-height: unset;
+    }
+
+    .card-body {
+        padding: 1em 0 0 0;
     }
 
     .card-img-top {
