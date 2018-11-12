@@ -137,6 +137,14 @@ class NavigationNonAuth extends React.Component {
         this.state = {
             isOpen: false
         };
+
+        this.toggle = this.toggle.bind(this);
+    }
+
+    toggle() {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
     }
 
     render() {
