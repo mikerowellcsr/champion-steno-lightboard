@@ -365,6 +365,7 @@ text-input:focus {
     .speaker-photo {
         height: 50vw;
         width: 50vw;
+        object-fit: fill;
     }
 
     .speaker-photo-picker {
