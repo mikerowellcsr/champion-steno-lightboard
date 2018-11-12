@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
+import 'filepond/dist/filepond.min.css';
 import './index.css';
 
 import App from './App';

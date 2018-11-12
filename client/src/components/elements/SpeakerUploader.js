@@ -4,7 +4,6 @@ import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import FilePondPluginImageResize from 'filepond-plugin-image-resize';
 import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size';
 import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
-import 'filepond/dist/filepond.min.css';
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
 import { db, storage } from '../../firebase/firebase';
 import Uuid from 'uuid/v4';
